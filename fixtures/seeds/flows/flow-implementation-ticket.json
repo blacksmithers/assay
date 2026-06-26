@@ -1,0 +1,395 @@
+{
+  "name": "flow-implementation-ticket",
+  "description": "Implementation ticket lifecycle (4 IS, 3 files, 3 ACs, no testTypes). Embeds prerequisite deviation, missing+justification lifecycle, extra+justification lifecycle, and a final check-mode review where the agent forgot to call complete_work_session.",
+  "initialContext": {
+    "ticket": {
+      "id": "T-impl",
+      "epicId": "E-1",
+      "title": "Wire OAuth callback handler",
+      "ticketType": "implementation",
+      "complexity": "medium",
+      "estimatedMinutes": 90,
+      "acceptanceCriteria": [
+        {
+          "id": "AC-1",
+          "given": "OAuth provider replies",
+          "when": "callback hits /auth/callback",
+          "then": "session token persists",
+          "order": 1
+        },
+        {
+          "id": "AC-2",
+          "given": "token expires",
+          "when": "refresh request made",
+          "then": "new token issued",
+          "order": 2
+        },
+        {
+          "id": "AC-3",
+          "given": "user logs out",
+          "when": "session ends",
+          "then": "tokens revoked",
+          "order": 3
+        }
+      ],
+      "implementationSteps": [
+        {
+          "id": "IS-1",
+          "order": 1,
+          "text": "Wire OAuth callback handler"
+        },
+        {
+          "id": "IS-2",
+          "order": 2,
+          "text": "Persist session token to DB"
+        },
+        {
+          "id": "IS-3",
+          "order": 3,
+          "text": "Add session token refresh handler"
+        },
+        {
+          "id": "IS-4",
+          "order": 4,
+          "text": "Wire logout / revoke route"
+        }
+      ],
+      "filesToBeCreated": [
+        "src/auth/callback.ts",
+        "src/auth/refresh.ts",
+        "src/auth/logout.ts"
+      ],
+      "filesToBeModified": [],
+      "filesToBeDeleted": [],
+      "filesToBeReferenced": [],
+      "guardrails": [],
+      "codeReferences": [],
+      "typeReferences": [],
+      "blueprintReferences": [],
+      "dependencies": []
+    },
+    "workSession": {
+      "id": "ws-1",
+      "ticketId": "T-impl",
+      "projectId": "p-1",
+      "status": "active",
+      "startedAt": "2026-01-01T00:00:00.000Z"
+    },
+    "acceptanceChecks": [],
+    "implStepCompletions": [],
+    "fileChanges": [],
+    "testResults": []
+  },
+  "steps": [
+    {
+      "description": "Initial call \u2014 action=check-imp-step. Returns IS #1.",
+      "options": {
+        "mode": "action",
+        "action": "check-imp-step"
+      }
+    },
+    {
+      "description": "Mark IS #1 done. Continue \u2192 IS #2.",
+      "options": {
+        "mode": "action",
+        "action": "check-imp-step"
+      },
+      "contextDelta": {
+        "addImplStepCompletions": [
+          {
+            "id": "cpl-IS-1",
+            "workSessionId": "ws-1",
+            "stepId": "IS-1",
+            "ticketId": "T-impl",
+            "projectId": "p-1",
+            "done": true,
+            "doneAt": "2026-01-01T00:10:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Mark IS #2 done. Continue \u2192 IS #3.",
+      "options": {
+        "mode": "action",
+        "action": "check-imp-step"
+      },
+      "contextDelta": {
+        "addImplStepCompletions": [
+          {
+            "id": "cpl-IS-2",
+            "workSessionId": "ws-1",
+            "stepId": "IS-2",
+            "ticketId": "T-impl",
+            "projectId": "p-1",
+            "done": true,
+            "doneAt": "2026-01-01T00:20:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Deviation \u2014 agent jumps to action=add-files-changes. Engine returns prerequisite pointing to IS #3.",
+      "options": {
+        "mode": "action",
+        "action": "add-files-changes"
+      }
+    },
+    {
+      "description": "Honor prerequisite. Mark IS #3 done. Continue \u2192 IS #4.",
+      "options": {
+        "mode": "action",
+        "action": "check-imp-step"
+      },
+      "contextDelta": {
+        "addImplStepCompletions": [
+          {
+            "id": "cpl-IS-3",
+            "workSessionId": "ws-1",
+            "stepId": "IS-3",
+            "ticketId": "T-impl",
+            "projectId": "p-1",
+            "done": true,
+            "doneAt": "2026-01-01T00:30:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Mark IS #4 done. Engine moves to next-action \u2192 add-files-changes.",
+      "options": {
+        "mode": "action",
+        "action": "check-imp-step"
+      },
+      "contextDelta": {
+        "addImplStepCompletions": [
+          {
+            "id": "cpl-IS-4",
+            "workSessionId": "ws-1",
+            "stepId": "IS-4",
+            "ticketId": "T-impl",
+            "projectId": "p-1",
+            "done": true,
+            "doneAt": "2026-01-01T00:40:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Register file #1 (matched).",
+      "options": {
+        "mode": "action",
+        "action": "add-files-changes"
+      },
+      "contextDelta": {
+        "addFileChanges": [
+          {
+            "id": "fc-callback",
+            "workSessionId": "ws-1",
+            "ticketId": "T-impl",
+            "projectId": "p-1",
+            "expectedPath": "src/auth/callback.ts",
+            "expectedAction": "create",
+            "actualAction": "created",
+            "status": "matched",
+            "justificationApproved": "pending",
+            "recordedAt": "2026-01-01T00:50:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Register file #2 (matched).",
+      "options": {
+        "mode": "action",
+        "action": "add-files-changes"
+      },
+      "contextDelta": {
+        "addFileChanges": [
+          {
+            "id": "fc-refresh",
+            "workSessionId": "ws-1",
+            "ticketId": "T-impl",
+            "projectId": "p-1",
+            "expectedPath": "src/auth/refresh.ts",
+            "expectedAction": "create",
+            "actualAction": "created",
+            "status": "matched",
+            "justificationApproved": "pending",
+            "recordedAt": "2026-01-01T01:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Deviation \u2014 file #3 not registered yet. Engine surfaces c3-missing finding (severity error, IS now complete).",
+      "options": {
+        "mode": "action",
+        "action": "add-files-changes"
+      }
+    },
+    {
+      "description": "Agent attaches justification for file #3 (registered as missing). Engine surfaces c3-justification-pending warn.",
+      "options": {
+        "mode": "action",
+        "action": "add-files-changes"
+      },
+      "contextDelta": {
+        "addFileChanges": [
+          {
+            "id": "fc-logout",
+            "workSessionId": "ws-1",
+            "ticketId": "T-impl",
+            "projectId": "p-1",
+            "expectedPath": "src/auth/logout.ts",
+            "expectedAction": "create",
+            "status": "missing",
+            "justification": "Logout handled by existing /api/session DELETE; new file not needed",
+            "justificationApproved": "pending",
+            "recordedAt": "2026-01-01T01:10:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Simulated approval \u2014 context updates justificationApproved=approved. Silent.",
+      "options": {
+        "mode": "action",
+        "action": "add-files-changes"
+      },
+      "contextDelta": {
+        "updateFileChanges": [
+          {
+            "id": "fc-logout",
+            "patch": {
+              "justificationApproved": "approved"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "description": "Deviation \u2014 agent registers an extra file (status=extra) without justification. Engine surfaces c3-extra-without-justification.",
+      "options": {
+        "mode": "action",
+        "action": "add-files-changes"
+      },
+      "contextDelta": {
+        "addFileChanges": [
+          {
+            "id": "fc-extra-helper",
+            "workSessionId": "ws-1",
+            "ticketId": "T-impl",
+            "projectId": "p-1",
+            "expectedPath": "src/auth/helpers.ts",
+            "expectedAction": "create",
+            "actualAction": "created",
+            "status": "extra",
+            "justificationApproved": "pending",
+            "recordedAt": "2026-01-01T01:20:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Agent attaches justification. Pending warn.",
+      "options": {
+        "mode": "action",
+        "action": "add-files-changes"
+      },
+      "contextDelta": {
+        "updateFileChanges": [
+          {
+            "id": "fc-extra-helper",
+            "patch": {
+              "justification": "shared OAuth helpers extracted from refresh.ts"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "description": "Simulated approval \u2014 approved. Silent.",
+      "options": {
+        "mode": "action",
+        "action": "add-files-changes"
+      },
+      "contextDelta": {
+        "updateFileChanges": [
+          {
+            "id": "fc-extra-helper",
+            "patch": {
+              "justificationApproved": "approved"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "description": "Mark AC #1 verified.",
+      "options": {
+        "mode": "action",
+        "action": "check-ac"
+      },
+      "contextDelta": {
+        "addAcceptanceChecks": [
+          {
+            "id": "chk-AC-1",
+            "workSessionId": "ws-1",
+            "criterionId": "AC-1",
+            "ticketId": "T-impl",
+            "projectId": "p-1",
+            "checked": true,
+            "checkedAt": "2026-01-01T01:30:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Mark AC #2 verified.",
+      "options": {
+        "mode": "action",
+        "action": "check-ac"
+      },
+      "contextDelta": {
+        "addAcceptanceChecks": [
+          {
+            "id": "chk-AC-2",
+            "workSessionId": "ws-1",
+            "criterionId": "AC-2",
+            "ticketId": "T-impl",
+            "projectId": "p-1",
+            "checked": true,
+            "checkedAt": "2026-01-01T01:35:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Mark AC #3 verified. Engine returns complete.",
+      "options": {
+        "mode": "action",
+        "action": "check-ac"
+      },
+      "contextDelta": {
+        "addAcceptanceChecks": [
+          {
+            "id": "chk-AC-3",
+            "workSessionId": "ws-1",
+            "criterionId": "AC-3",
+            "ticketId": "T-impl",
+            "projectId": "p-1",
+            "checked": true,
+            "checkedAt": "2026-01-01T01:40:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Post-complete review \u2014 agent did NOT invoke complete_work_session. Reviewer calls mode=check. Summary shows zero pending, zero issues, recommends complete_work_session.",
+      "options": {
+        "mode": "check"
+      }
+    }
+  ]
+}

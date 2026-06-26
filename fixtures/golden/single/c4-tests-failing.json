@@ -1,0 +1,196 @@
+{
+  "passed": false,
+  "mode": "action",
+  "checks": {
+    "acceptanceCoverage": {
+      "checkType": "acceptance-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "implementationCoverage": {
+      "checkType": "implementation-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "fileActionCoverage": {
+      "checkType": "file-action-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "testResultPresence": {
+      "checkType": "test-result-presence",
+      "passed": false,
+      "progress": {
+        "total": 1,
+        "completed": 0,
+        "remaining": 1,
+        "remainingIds": [
+          "unit"
+        ]
+      },
+      "findings": [
+        {
+          "id": "b29b33829363d255",
+          "checkType": "test-result-presence",
+          "severity": "error",
+          "message": "Tests failing: unit",
+          "primaryEntityId": "tr-unit-failing",
+          "entityIds": [
+            "T-1",
+            "tr-unit-failing"
+          ],
+          "context": {
+            "issue": "tests-failing",
+            "testType": "unit",
+            "failed": 2,
+            "passed": 8,
+            "total": 10
+          },
+          "guidance": {
+            "message": "Recorded test result has failures without a justification.\n - Test type: unit\n - Failed: 2 of 10\n\n The most recent recorded result for this test type has failed tests, and no\n failure justifications were provided. Failing tests without justification\n block work session completion. Note: a later passing run for the same\n (testType, command) supersedes this one — if you fix and re-run, this finding\n disappears.\n\n Possible reasons:\n - The tests legitimately fail and you haven't fixed them yet\n - The failures are known/intentional (e.g., known flaky test) and need justification\n - The implementation is incomplete and this is expected at this stage\n\n Recommended moves:\n 1. Inspect the failures and determine root cause\n 2. Fix the failing tests, re-run, and register the new passing result via record_test_result (the older failing entry remains as historical record)\n 3. If the failures are intentional and acceptable, attach failure justifications via add_failure_justification\n 4. If the implementation is incomplete, return to check-imp-step and complete pending steps",
+            "operations": [
+              "record_test_result",
+              "add_failure_justification"
+            ]
+          }
+        },
+        {
+          "id": "58c3630b982bf9a7",
+          "checkType": "test-result-presence",
+          "severity": "error",
+          "message": "Test type not satisfied: unit",
+          "primaryEntityId": "unit",
+          "entityIds": [
+            "T-1"
+          ],
+          "context": {
+            "issue": "missing-coverage",
+            "testType": "unit",
+            "progressTotal": 1,
+            "progressCompleted": 0,
+            "progressRemaining": 1
+          },
+          "guidance": {
+            "message": "Test type unit has no satisfying result.\n\n Run the tests and register via record_test_result, OR record skip with justification.",
+            "operations": [
+              "record_test_result",
+              "add_skip_justification"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "findings": [
+    {
+      "id": "b29b33829363d255",
+      "checkType": "test-result-presence",
+      "severity": "error",
+      "message": "Tests failing: unit",
+      "primaryEntityId": "tr-unit-failing",
+      "entityIds": [
+        "T-1",
+        "tr-unit-failing"
+      ],
+      "context": {
+        "issue": "tests-failing",
+        "testType": "unit",
+        "failed": 2,
+        "passed": 8,
+        "total": 10
+      },
+      "guidance": {
+        "message": "Recorded test result has failures without a justification.\n - Test type: unit\n - Failed: 2 of 10\n\n The most recent recorded result for this test type has failed tests, and no\n failure justifications were provided. Failing tests without justification\n block work session completion. Note: a later passing run for the same\n (testType, command) supersedes this one — if you fix and re-run, this finding\n disappears.\n\n Possible reasons:\n - The tests legitimately fail and you haven't fixed them yet\n - The failures are known/intentional (e.g., known flaky test) and need justification\n - The implementation is incomplete and this is expected at this stage\n\n Recommended moves:\n 1. Inspect the failures and determine root cause\n 2. Fix the failing tests, re-run, and register the new passing result via record_test_result (the older failing entry remains as historical record)\n 3. If the failures are intentional and acceptable, attach failure justifications via add_failure_justification\n 4. If the implementation is incomplete, return to check-imp-step and complete pending steps",
+        "operations": [
+          "record_test_result",
+          "add_failure_justification"
+        ]
+      }
+    },
+    {
+      "id": "58c3630b982bf9a7",
+      "checkType": "test-result-presence",
+      "severity": "error",
+      "message": "Test type not satisfied: unit",
+      "primaryEntityId": "unit",
+      "entityIds": [
+        "T-1"
+      ],
+      "context": {
+        "issue": "missing-coverage",
+        "testType": "unit",
+        "progressTotal": 1,
+        "progressCompleted": 0,
+        "progressRemaining": 1
+      },
+      "guidance": {
+        "message": "Test type unit has no satisfying result.\n\n Run the tests and register via record_test_result, OR record skip with justification.",
+        "operations": [
+          "record_test_result",
+          "add_skip_justification"
+        ]
+      }
+    }
+  ],
+  "nextStep": {
+    "reason": "resolve",
+    "action": "add-test-results",
+    "issues": [
+      {
+        "testResult": {
+          "id": "tr-unit-failing",
+          "workSessionId": "ws-1",
+          "projectId": "p-1",
+          "testType": "unit",
+          "passed": 8,
+          "failed": 2,
+          "skipped": 0,
+          "total": 10,
+          "allPassed": false,
+          "skippedJustifications": [],
+          "failureJustifications": [],
+          "runAt": "2026-01-02T00:00:00.000Z"
+        },
+        "issue": "tests-failing"
+      }
+    ],
+    "progress": {
+      "total": 1,
+      "completed": 0,
+      "remaining": 1,
+      "remainingIds": [
+        "unit"
+      ]
+    },
+    "guidance": {
+      "message": "Test result issues require resolution before adding new entries.\n - Open issues: 1\n\n - unit (tests failing without justification): fix and re-run, OR add_failure_justification\n\n Issues take priority over registering new test types. Note: a later passing\n run for the same (testType, command) supersedes any older failing run for that\n pair, so re-running and recording a new result may auto-resolve some issues.\n\n Recommended moves:\n 1. Resolve the first issue per its specific guidance\n 2. For tests-failing issues, fixing and re-running with record_test_result auto-supersedes\n 3. For skip/failure justifications, attach via add_skip_justification or add_failure_justification",
+      "operations": [
+        "record_test_result",
+        "add_failure_justification"
+      ]
+    }
+  },
+  "summary": null,
+  "meta": {
+    "engineVersion": "0.1.0",
+    "configHash": "cfg-e5e5b8b6"
+  }
+}

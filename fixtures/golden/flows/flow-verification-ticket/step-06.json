@@ -1,0 +1,300 @@
+{
+  "passed": false,
+  "mode": "action",
+  "checks": {
+    "acceptanceCoverage": {
+      "checkType": "acceptance-coverage",
+      "passed": false,
+      "progress": {
+        "total": 3,
+        "completed": 0,
+        "remaining": 3,
+        "remainingIds": [
+          "AC-1",
+          "AC-2",
+          "AC-3"
+        ],
+        "nextInOrderId": "AC-1"
+      },
+      "findings": [
+        {
+          "id": "bb499b2b8c9bef65",
+          "checkType": "acceptance-coverage",
+          "severity": "error",
+          "message": "Acceptance criterion not verified: AC-1",
+          "primaryEntityId": "AC-1",
+          "entityIds": [
+            "T-verif",
+            "AC-1"
+          ],
+          "context": {
+            "given": "unit suite",
+            "when": "pnpm test runs",
+            "then": "all unit tests pass",
+            "order": 1,
+            "progressTotal": 3,
+            "progressCompleted": 0,
+            "progressRemaining": 3
+          },
+          "guidance": {
+            "message": "Acceptance criterion has not been verified yet.\n - Position: 1 of 3\n - Progress: 0 verified, 3 remaining\n - GIVEN: unit suite\n - WHEN: pnpm test runs\n - THEN: all unit tests pass\n\n An acceptance criterion is the contract between the spec and the implementation.\n Until you confirm the implemented behavior matches all GIVEN/WHEN/THEN clauses,\n the work session cannot complete.\n\n Possible reasons this is pending:\n - You implemented the behavior but have not run mark_acceptance_check yet\n - You haven't verified the behavior in this work session\n - The criterion describes behavior outside this ticket's scope\n\n Recommended moves:\n 1. Verify the implemented behavior against the GIVEN/WHEN/THEN clauses above\n 2. Run mark_acceptance_check with checked=true once verified\n 3. If the criterion no longer applies, reopen the planning session to remove it from the spec — assayforge does not bypass declared ACs",
+            "operations": [
+              "mark_acceptance_check"
+            ]
+          }
+        },
+        {
+          "id": "cc63bd3083e7e8e8",
+          "checkType": "acceptance-coverage",
+          "severity": "error",
+          "message": "Acceptance criterion not verified: AC-2",
+          "primaryEntityId": "AC-2",
+          "entityIds": [
+            "T-verif",
+            "AC-2"
+          ],
+          "context": {
+            "given": "e2e suite",
+            "when": "playwright runs",
+            "then": "critical paths pass",
+            "order": 2,
+            "progressTotal": 3,
+            "progressCompleted": 0,
+            "progressRemaining": 3
+          },
+          "guidance": {
+            "message": "Acceptance criterion #2 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+            "operations": [
+              "mark_acceptance_check"
+            ]
+          }
+        },
+        {
+          "id": "f31f152d1a9609e3",
+          "checkType": "acceptance-coverage",
+          "severity": "error",
+          "message": "Acceptance criterion not verified: AC-3",
+          "primaryEntityId": "AC-3",
+          "entityIds": [
+            "T-verif",
+            "AC-3"
+          ],
+          "context": {
+            "given": "reviewer reads doc",
+            "when": "verification doc exists",
+            "then": "sign-off recorded",
+            "order": 3,
+            "progressTotal": 3,
+            "progressCompleted": 0,
+            "progressRemaining": 3
+          },
+          "guidance": {
+            "message": "Acceptance criterion #3 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+            "operations": [
+              "mark_acceptance_check"
+            ]
+          }
+        }
+      ]
+    },
+    "implementationCoverage": {
+      "checkType": "implementation-coverage",
+      "passed": true,
+      "progress": {
+        "total": 0,
+        "completed": 0,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "fileActionCoverage": {
+      "checkType": "file-action-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "testResultPresence": {
+      "checkType": "test-result-presence",
+      "passed": false,
+      "progress": {
+        "total": 2,
+        "completed": 2,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": [
+        {
+          "id": "11905ce0ee4ae8ea",
+          "checkType": "test-result-presence",
+          "severity": "error",
+          "message": "Tests failing: unit",
+          "primaryEntityId": "tr-unit-failing",
+          "entityIds": [
+            "T-verif",
+            "tr-unit-failing"
+          ],
+          "context": {
+            "issue": "tests-failing",
+            "testType": "unit",
+            "failed": 2,
+            "passed": 18,
+            "total": 20,
+            "command": "pnpm test"
+          },
+          "guidance": {
+            "message": "Tests failing without justification.\n - unit: 2/20 failed\n\n Fix and re-run (auto-supersedes), OR justify via add_failure_justification.",
+            "operations": [
+              "record_test_result",
+              "add_failure_justification"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "findings": [
+    {
+      "id": "bb499b2b8c9bef65",
+      "checkType": "acceptance-coverage",
+      "severity": "error",
+      "message": "Acceptance criterion not verified: AC-1",
+      "primaryEntityId": "AC-1",
+      "entityIds": [
+        "T-verif",
+        "AC-1"
+      ],
+      "context": {
+        "given": "unit suite",
+        "when": "pnpm test runs",
+        "then": "all unit tests pass",
+        "order": 1,
+        "progressTotal": 3,
+        "progressCompleted": 0,
+        "progressRemaining": 3
+      },
+      "guidance": {
+        "message": "Acceptance criterion has not been verified yet.\n - Position: 1 of 3\n - Progress: 0 verified, 3 remaining\n - GIVEN: unit suite\n - WHEN: pnpm test runs\n - THEN: all unit tests pass\n\n An acceptance criterion is the contract between the spec and the implementation.\n Until you confirm the implemented behavior matches all GIVEN/WHEN/THEN clauses,\n the work session cannot complete.\n\n Possible reasons this is pending:\n - You implemented the behavior but have not run mark_acceptance_check yet\n - You haven't verified the behavior in this work session\n - The criterion describes behavior outside this ticket's scope\n\n Recommended moves:\n 1. Verify the implemented behavior against the GIVEN/WHEN/THEN clauses above\n 2. Run mark_acceptance_check with checked=true once verified\n 3. If the criterion no longer applies, reopen the planning session to remove it from the spec — assayforge does not bypass declared ACs",
+        "operations": [
+          "mark_acceptance_check"
+        ]
+      }
+    },
+    {
+      "id": "cc63bd3083e7e8e8",
+      "checkType": "acceptance-coverage",
+      "severity": "error",
+      "message": "Acceptance criterion not verified: AC-2",
+      "primaryEntityId": "AC-2",
+      "entityIds": [
+        "T-verif",
+        "AC-2"
+      ],
+      "context": {
+        "given": "e2e suite",
+        "when": "playwright runs",
+        "then": "critical paths pass",
+        "order": 2,
+        "progressTotal": 3,
+        "progressCompleted": 0,
+        "progressRemaining": 3
+      },
+      "guidance": {
+        "message": "Acceptance criterion #2 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+        "operations": [
+          "mark_acceptance_check"
+        ]
+      }
+    },
+    {
+      "id": "f31f152d1a9609e3",
+      "checkType": "acceptance-coverage",
+      "severity": "error",
+      "message": "Acceptance criterion not verified: AC-3",
+      "primaryEntityId": "AC-3",
+      "entityIds": [
+        "T-verif",
+        "AC-3"
+      ],
+      "context": {
+        "given": "reviewer reads doc",
+        "when": "verification doc exists",
+        "then": "sign-off recorded",
+        "order": 3,
+        "progressTotal": 3,
+        "progressCompleted": 0,
+        "progressRemaining": 3
+      },
+      "guidance": {
+        "message": "Acceptance criterion #3 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+        "operations": [
+          "mark_acceptance_check"
+        ]
+      }
+    },
+    {
+      "id": "11905ce0ee4ae8ea",
+      "checkType": "test-result-presence",
+      "severity": "error",
+      "message": "Tests failing: unit",
+      "primaryEntityId": "tr-unit-failing",
+      "entityIds": [
+        "T-verif",
+        "tr-unit-failing"
+      ],
+      "context": {
+        "issue": "tests-failing",
+        "testType": "unit",
+        "failed": 2,
+        "passed": 18,
+        "total": 20,
+        "command": "pnpm test"
+      },
+      "guidance": {
+        "message": "Tests failing without justification.\n - unit: 2/20 failed\n\n Fix and re-run (auto-supersedes), OR justify via add_failure_justification.",
+        "operations": [
+          "record_test_result",
+          "add_failure_justification"
+        ]
+      }
+    }
+  ],
+  "nextStep": {
+    "reason": "next-action",
+    "action": "check-ac",
+    "acceptanceCriterion": {
+      "id": "AC-1",
+      "given": "unit suite",
+      "when": "pnpm test runs",
+      "then": "all unit tests pass",
+      "order": 1
+    },
+    "progress": {
+      "total": 3,
+      "completed": 0,
+      "remaining": 3,
+      "remainingIds": [
+        "AC-1",
+        "AC-2",
+        "AC-3"
+      ],
+      "nextInOrderId": "AC-1"
+    },
+    "guidance": {
+      "message": "Next acceptance criterion to verify:\n - Position: 1 of 3\n - Progress: 0 verified, 3 remaining\n - GIVEN: unit suite\n - WHEN: pnpm test runs\n - THEN: all unit tests pass\n\n Verify that the implemented behavior matches every GIVEN/WHEN/THEN clause.\n Acceptance criteria are typically the last action in a work session — if\n you're here, implementation, tests, and file changes should already be done.\n\n Recommended moves:\n 1. Examine the implementation against the BDD clauses above\n 2. If the behavior matches, run mark_acceptance_check with checked=true\n 3. If the behavior does not match, return to check-imp-step or add-files-changes to fix",
+      "operations": [
+        "mark_acceptance_check"
+      ]
+    }
+  },
+  "summary": null,
+  "meta": {
+    "engineVersion": "0.1.0",
+    "configHash": "cfg-e5e5b8b6"
+  }
+}

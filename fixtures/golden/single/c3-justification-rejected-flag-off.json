@@ -1,0 +1,83 @@
+{
+  "passed": true,
+  "mode": "action",
+  "checks": {
+    "acceptanceCoverage": {
+      "checkType": "acceptance-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "implementationCoverage": {
+      "checkType": "implementation-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "fileActionCoverage": {
+      "checkType": "file-action-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 0,
+        "remaining": 1,
+        "remainingIds": [
+          "a.ts"
+        ]
+      },
+      "findings": []
+    },
+    "testResultPresence": {
+      "checkType": "test-result-presence",
+      "passed": true,
+      "progress": {
+        "total": 0,
+        "completed": 0,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    }
+  },
+  "findings": [],
+  "nextStep": {
+    "reason": "continue",
+    "action": "add-files-changes",
+    "targets": [
+      {
+        "expectedPath": "a.ts",
+        "expectedAction": "create"
+      }
+    ],
+    "progress": {
+      "total": 1,
+      "completed": 0,
+      "remaining": 1,
+      "remainingIds": [
+        "a.ts"
+      ]
+    },
+    "guidance": {
+      "message": "File actions pending registration (1 of 1):\n\n - create: a.ts\n\n The spec lists these file paths and actions; you need to register what\n actually happened during implementation. Each entry needs an actualAction\n (created/modified/deleted/referenced/absent) and a status (matched if it went\n as planned, mismatched/missing/extra otherwise).\n\n Recommended moves:\n 1. Run `git status` and `git log` to verify what changed\n 2. For each entry above, run record_file_change with the actualAction, status, and optional commitHash\n 3. If any registration diverges from the planned action, attach add_file_change_justification explaining why",
+      "operations": [
+        "record_file_change",
+        "add_file_change_justification"
+      ]
+    }
+  },
+  "summary": null,
+  "meta": {
+    "engineVersion": "0.1.0",
+    "configHash": "cfg-e5e5b8b6"
+  }
+}

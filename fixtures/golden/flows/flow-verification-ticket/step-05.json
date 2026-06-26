@@ -1,0 +1,356 @@
+{
+  "passed": false,
+  "mode": "action",
+  "checks": {
+    "acceptanceCoverage": {
+      "checkType": "acceptance-coverage",
+      "passed": false,
+      "progress": {
+        "total": 3,
+        "completed": 0,
+        "remaining": 3,
+        "remainingIds": [
+          "AC-1",
+          "AC-2",
+          "AC-3"
+        ],
+        "nextInOrderId": "AC-1"
+      },
+      "findings": [
+        {
+          "id": "bb499b2b8c9bef65",
+          "checkType": "acceptance-coverage",
+          "severity": "error",
+          "message": "Acceptance criterion not verified: AC-1",
+          "primaryEntityId": "AC-1",
+          "entityIds": [
+            "T-verif",
+            "AC-1"
+          ],
+          "context": {
+            "given": "unit suite",
+            "when": "pnpm test runs",
+            "then": "all unit tests pass",
+            "order": 1,
+            "progressTotal": 3,
+            "progressCompleted": 0,
+            "progressRemaining": 3
+          },
+          "guidance": {
+            "message": "Acceptance criterion #1 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+            "operations": [
+              "mark_acceptance_check"
+            ]
+          }
+        },
+        {
+          "id": "cc63bd3083e7e8e8",
+          "checkType": "acceptance-coverage",
+          "severity": "error",
+          "message": "Acceptance criterion not verified: AC-2",
+          "primaryEntityId": "AC-2",
+          "entityIds": [
+            "T-verif",
+            "AC-2"
+          ],
+          "context": {
+            "given": "e2e suite",
+            "when": "playwright runs",
+            "then": "critical paths pass",
+            "order": 2,
+            "progressTotal": 3,
+            "progressCompleted": 0,
+            "progressRemaining": 3
+          },
+          "guidance": {
+            "message": "Acceptance criterion #2 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+            "operations": [
+              "mark_acceptance_check"
+            ]
+          }
+        },
+        {
+          "id": "f31f152d1a9609e3",
+          "checkType": "acceptance-coverage",
+          "severity": "error",
+          "message": "Acceptance criterion not verified: AC-3",
+          "primaryEntityId": "AC-3",
+          "entityIds": [
+            "T-verif",
+            "AC-3"
+          ],
+          "context": {
+            "given": "reviewer reads doc",
+            "when": "verification doc exists",
+            "then": "sign-off recorded",
+            "order": 3,
+            "progressTotal": 3,
+            "progressCompleted": 0,
+            "progressRemaining": 3
+          },
+          "guidance": {
+            "message": "Acceptance criterion #3 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+            "operations": [
+              "mark_acceptance_check"
+            ]
+          }
+        }
+      ]
+    },
+    "implementationCoverage": {
+      "checkType": "implementation-coverage",
+      "passed": true,
+      "progress": {
+        "total": 0,
+        "completed": 0,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "fileActionCoverage": {
+      "checkType": "file-action-coverage",
+      "passed": false,
+      "progress": {
+        "total": 1,
+        "completed": 0,
+        "remaining": 1,
+        "remainingIds": [
+          "docs/oauth-verification.md"
+        ]
+      },
+      "findings": [
+        {
+          "id": "39d69ceca2992c04",
+          "checkType": "file-action-coverage",
+          "severity": "error",
+          "message": "Expected file change not recorded: docs/oauth-verification.md",
+          "primaryEntityId": "docs/oauth-verification.md",
+          "entityIds": [
+            "T-verif",
+            "docs/oauth-verification.md"
+          ],
+          "context": {
+            "expectedPath": "docs/oauth-verification.md",
+            "expectedAction": "reference",
+            "status": "missing",
+            "progressTotal": 1,
+            "progressCompleted": 0,
+            "progressRemaining": 1,
+            "isImplComplete": true,
+            "hasJustification": false
+          },
+          "guidance": {
+            "message": "A planned file action is missing.\n - Path: docs/oauth-verification.md\n - Expected action: reference\n - Implementation steps: complete\n\n Implementation is fully recorded as done, so this gap is unlikely to resolve\n automatically. Either you have not registered the file change yet, or the\n file action was not executed.\n\n Possible reasons:\n - You executed the action but did not register it via record_file_change\n - The file was intentionally not touched (consider attaching a justification)\n - The spec is wrong about this file (consider reopening planning to remove it)\n\n Recommended moves:\n 1. Run `git status` and `git diff` to confirm the local state of docs/oauth-verification.md\n 2. If the file matches the expected action, register it via record_file_change with the matching actualAction (and optional commitHash for lifecycle validation)\n 3. If the file was deliberately skipped, attach a reason via add_file_change_justification\n 4. If the spec is wrong, reopen the planning session and adjust the filesToBe* lists",
+            "operations": [
+              "record_file_change",
+              "add_file_change_justification"
+            ]
+          }
+        }
+      ]
+    },
+    "testResultPresence": {
+      "checkType": "test-result-presence",
+      "passed": false,
+      "progress": {
+        "total": 2,
+        "completed": 2,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": [
+        {
+          "id": "11905ce0ee4ae8ea",
+          "checkType": "test-result-presence",
+          "severity": "error",
+          "message": "Tests failing: unit",
+          "primaryEntityId": "tr-unit-failing",
+          "entityIds": [
+            "T-verif",
+            "tr-unit-failing"
+          ],
+          "context": {
+            "issue": "tests-failing",
+            "testType": "unit",
+            "failed": 2,
+            "passed": 18,
+            "total": 20,
+            "command": "pnpm test"
+          },
+          "guidance": {
+            "message": "Tests failing without justification.\n - unit: 2/20 failed\n\n Fix and re-run (auto-supersedes), OR justify via add_failure_justification.",
+            "operations": [
+              "record_test_result",
+              "add_failure_justification"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "findings": [
+    {
+      "id": "bb499b2b8c9bef65",
+      "checkType": "acceptance-coverage",
+      "severity": "error",
+      "message": "Acceptance criterion not verified: AC-1",
+      "primaryEntityId": "AC-1",
+      "entityIds": [
+        "T-verif",
+        "AC-1"
+      ],
+      "context": {
+        "given": "unit suite",
+        "when": "pnpm test runs",
+        "then": "all unit tests pass",
+        "order": 1,
+        "progressTotal": 3,
+        "progressCompleted": 0,
+        "progressRemaining": 3
+      },
+      "guidance": {
+        "message": "Acceptance criterion #1 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+        "operations": [
+          "mark_acceptance_check"
+        ]
+      }
+    },
+    {
+      "id": "cc63bd3083e7e8e8",
+      "checkType": "acceptance-coverage",
+      "severity": "error",
+      "message": "Acceptance criterion not verified: AC-2",
+      "primaryEntityId": "AC-2",
+      "entityIds": [
+        "T-verif",
+        "AC-2"
+      ],
+      "context": {
+        "given": "e2e suite",
+        "when": "playwright runs",
+        "then": "critical paths pass",
+        "order": 2,
+        "progressTotal": 3,
+        "progressCompleted": 0,
+        "progressRemaining": 3
+      },
+      "guidance": {
+        "message": "Acceptance criterion #2 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+        "operations": [
+          "mark_acceptance_check"
+        ]
+      }
+    },
+    {
+      "id": "f31f152d1a9609e3",
+      "checkType": "acceptance-coverage",
+      "severity": "error",
+      "message": "Acceptance criterion not verified: AC-3",
+      "primaryEntityId": "AC-3",
+      "entityIds": [
+        "T-verif",
+        "AC-3"
+      ],
+      "context": {
+        "given": "reviewer reads doc",
+        "when": "verification doc exists",
+        "then": "sign-off recorded",
+        "order": 3,
+        "progressTotal": 3,
+        "progressCompleted": 0,
+        "progressRemaining": 3
+      },
+      "guidance": {
+        "message": "Acceptance criterion #3 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+        "operations": [
+          "mark_acceptance_check"
+        ]
+      }
+    },
+    {
+      "id": "39d69ceca2992c04",
+      "checkType": "file-action-coverage",
+      "severity": "error",
+      "message": "Expected file change not recorded: docs/oauth-verification.md",
+      "primaryEntityId": "docs/oauth-verification.md",
+      "entityIds": [
+        "T-verif",
+        "docs/oauth-verification.md"
+      ],
+      "context": {
+        "expectedPath": "docs/oauth-verification.md",
+        "expectedAction": "reference",
+        "status": "missing",
+        "progressTotal": 1,
+        "progressCompleted": 0,
+        "progressRemaining": 1,
+        "isImplComplete": true,
+        "hasJustification": false
+      },
+      "guidance": {
+        "message": "A planned file action is missing.\n - Path: docs/oauth-verification.md\n - Expected action: reference\n - Implementation steps: complete\n\n Implementation is fully recorded as done, so this gap is unlikely to resolve\n automatically. Either you have not registered the file change yet, or the\n file action was not executed.\n\n Possible reasons:\n - You executed the action but did not register it via record_file_change\n - The file was intentionally not touched (consider attaching a justification)\n - The spec is wrong about this file (consider reopening planning to remove it)\n\n Recommended moves:\n 1. Run `git status` and `git diff` to confirm the local state of docs/oauth-verification.md\n 2. If the file matches the expected action, register it via record_file_change with the matching actualAction (and optional commitHash for lifecycle validation)\n 3. If the file was deliberately skipped, attach a reason via add_file_change_justification\n 4. If the spec is wrong, reopen the planning session and adjust the filesToBe* lists",
+        "operations": [
+          "record_file_change",
+          "add_file_change_justification"
+        ]
+      }
+    },
+    {
+      "id": "11905ce0ee4ae8ea",
+      "checkType": "test-result-presence",
+      "severity": "error",
+      "message": "Tests failing: unit",
+      "primaryEntityId": "tr-unit-failing",
+      "entityIds": [
+        "T-verif",
+        "tr-unit-failing"
+      ],
+      "context": {
+        "issue": "tests-failing",
+        "testType": "unit",
+        "failed": 2,
+        "passed": 18,
+        "total": 20,
+        "command": "pnpm test"
+      },
+      "guidance": {
+        "message": "Tests failing without justification.\n - unit: 2/20 failed\n\n Fix and re-run (auto-supersedes), OR justify via add_failure_justification.",
+        "operations": [
+          "record_test_result",
+          "add_failure_justification"
+        ]
+      }
+    }
+  ],
+  "nextStep": {
+    "reason": "next-action",
+    "action": "add-files-changes",
+    "targets": [
+      {
+        "expectedPath": "docs/oauth-verification.md",
+        "expectedAction": "reference"
+      }
+    ],
+    "progress": {
+      "total": 1,
+      "completed": 0,
+      "remaining": 1,
+      "remainingIds": [
+        "docs/oauth-verification.md"
+      ]
+    },
+    "guidance": {
+      "message": "File actions pending registration (1 of 1):\n\n - reference: docs/oauth-verification.md\n\n The spec lists these file paths and actions; you need to register what\n actually happened during implementation. Each entry needs an actualAction\n (created/modified/deleted/referenced/absent) and a status (matched if it went\n as planned, mismatched/missing/extra otherwise).\n\n Recommended moves:\n 1. Run `git status` and `git log` to verify what changed\n 2. For each entry above, run record_file_change with the actualAction, status, and optional commitHash\n 3. If any registration diverges from the planned action, attach add_file_change_justification explaining why",
+      "operations": [
+        "record_file_change",
+        "add_file_change_justification"
+      ]
+    }
+  },
+  "summary": null,
+  "meta": {
+    "engineVersion": "0.1.0",
+    "configHash": "cfg-e5e5b8b6"
+  }
+}

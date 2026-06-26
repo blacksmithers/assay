@@ -1,0 +1,234 @@
+{
+  "passed": false,
+  "mode": "check",
+  "checks": {
+    "acceptanceCoverage": {
+      "checkType": "acceptance-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "implementationCoverage": {
+      "checkType": "implementation-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "fileActionCoverage": {
+      "checkType": "file-action-coverage",
+      "passed": false,
+      "progress": {
+        "total": 1,
+        "completed": 0,
+        "remaining": 1,
+        "remainingIds": [
+          "a.ts"
+        ]
+      },
+      "findings": [
+        {
+          "id": "c1575e98e69c0010",
+          "checkType": "file-action-coverage",
+          "severity": "error",
+          "message": "Expected file change not recorded: a.ts",
+          "primaryEntityId": "fc-missing",
+          "entityIds": [
+            "T-1",
+            "a.ts",
+            "fc-missing"
+          ],
+          "context": {
+            "expectedPath": "a.ts",
+            "expectedAction": "create",
+            "status": "missing",
+            "progressTotal": 1,
+            "progressCompleted": 0,
+            "progressRemaining": 1,
+            "isImplComplete": true,
+            "fileChangeId": "fc-missing",
+            "hasJustification": false,
+            "justificationApproved": "pending"
+          },
+          "guidance": {
+            "message": "Planned file not registered (impl complete).\n - create: a.ts\n\n Register via record_file_change or attach add_file_change_justification.",
+            "operations": [
+              "record_file_change",
+              "add_file_change_justification"
+            ]
+          }
+        }
+      ]
+    },
+    "testResultPresence": {
+      "checkType": "test-result-presence",
+      "passed": false,
+      "progress": {
+        "total": 1,
+        "completed": 0,
+        "remaining": 1,
+        "remainingIds": [
+          "unit"
+        ]
+      },
+      "findings": [
+        {
+          "id": "bb74cb5d3d0d2fe0",
+          "checkType": "test-result-presence",
+          "severity": "error",
+          "message": "Tests failing: unit",
+          "primaryEntityId": "tr-unit-fail",
+          "entityIds": [
+            "T-1",
+            "tr-unit-fail"
+          ],
+          "context": {
+            "issue": "tests-failing",
+            "testType": "unit",
+            "failed": 2,
+            "passed": 8,
+            "total": 10
+          },
+          "guidance": {
+            "message": "Tests failing without justification.\n - unit: 2/10 failed\n\n Fix and re-run (auto-supersedes), OR justify via add_failure_justification.",
+            "operations": [
+              "record_test_result",
+              "add_failure_justification"
+            ]
+          }
+        },
+        {
+          "id": "58c3630b982bf9a7",
+          "checkType": "test-result-presence",
+          "severity": "error",
+          "message": "Test type not satisfied: unit",
+          "primaryEntityId": "unit",
+          "entityIds": [
+            "T-1"
+          ],
+          "context": {
+            "issue": "missing-coverage",
+            "testType": "unit",
+            "progressTotal": 1,
+            "progressCompleted": 0,
+            "progressRemaining": 1
+          },
+          "guidance": {
+            "message": "Test type unit has no satisfying result.\n\n Run the tests and register via record_test_result, OR record skip with justification.",
+            "operations": [
+              "record_test_result",
+              "add_skip_justification"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "findings": [
+    {
+      "id": "c1575e98e69c0010",
+      "checkType": "file-action-coverage",
+      "severity": "error",
+      "message": "Expected file change not recorded: a.ts",
+      "primaryEntityId": "fc-missing",
+      "entityIds": [
+        "T-1",
+        "a.ts",
+        "fc-missing"
+      ],
+      "context": {
+        "expectedPath": "a.ts",
+        "expectedAction": "create",
+        "status": "missing",
+        "progressTotal": 1,
+        "progressCompleted": 0,
+        "progressRemaining": 1,
+        "isImplComplete": true,
+        "fileChangeId": "fc-missing",
+        "hasJustification": false,
+        "justificationApproved": "pending"
+      },
+      "guidance": {
+        "message": "Planned file not registered (impl complete).\n - create: a.ts\n\n Register via record_file_change or attach add_file_change_justification.",
+        "operations": [
+          "record_file_change",
+          "add_file_change_justification"
+        ]
+      }
+    },
+    {
+      "id": "bb74cb5d3d0d2fe0",
+      "checkType": "test-result-presence",
+      "severity": "error",
+      "message": "Tests failing: unit",
+      "primaryEntityId": "tr-unit-fail",
+      "entityIds": [
+        "T-1",
+        "tr-unit-fail"
+      ],
+      "context": {
+        "issue": "tests-failing",
+        "testType": "unit",
+        "failed": 2,
+        "passed": 8,
+        "total": 10
+      },
+      "guidance": {
+        "message": "Tests failing without justification.\n - unit: 2/10 failed\n\n Fix and re-run (auto-supersedes), OR justify via add_failure_justification.",
+        "operations": [
+          "record_test_result",
+          "add_failure_justification"
+        ]
+      }
+    },
+    {
+      "id": "58c3630b982bf9a7",
+      "checkType": "test-result-presence",
+      "severity": "error",
+      "message": "Test type not satisfied: unit",
+      "primaryEntityId": "unit",
+      "entityIds": [
+        "T-1"
+      ],
+      "context": {
+        "issue": "missing-coverage",
+        "testType": "unit",
+        "progressTotal": 1,
+        "progressCompleted": 0,
+        "progressRemaining": 1
+      },
+      "guidance": {
+        "message": "Test type unit has no satisfying result.\n\n Run the tests and register via record_test_result, OR record skip with justification.",
+        "operations": [
+          "record_test_result",
+          "add_skip_justification"
+        ]
+      }
+    }
+  ],
+  "nextStep": null,
+  "summary": {
+    "message": "Ticket completion status:\n\n - add-test-results: 1 pending (1 issue(s))\n - add-files-changes: 1 pending (1 issue(s))\n\n Total pending: 2 items, 3 blocking issue(s).\n\n Start here:\n 1. Resolve the open issue(s) first — they block any successful completion.\n    First issue: missing without justification on a.ts\n    Action involved: add-files-changes\n\n 2. After resolving issues, return here for the next pending action.\n\nEach issue has its own compact guidance in the findings list above.\n Switch to mode='action' for verbose remediation guidance on a specific issue.",
+    "pendingByAction": {
+      "check-imp-step": 0,
+      "add-test-results": 1,
+      "add-files-changes": 1,
+      "check-ac": 0
+    },
+    "totalPending": 2,
+    "blockingIssues": 3
+  },
+  "meta": {
+    "engineVersion": "0.1.0",
+    "configHash": "cfg-e5e5b8b6"
+  }
+}

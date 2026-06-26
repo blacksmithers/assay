@@ -1,0 +1,600 @@
+{
+  "passed": false,
+  "mode": "action",
+  "checks": {
+    "acceptanceCoverage": {
+      "checkType": "acceptance-coverage",
+      "passed": false,
+      "progress": {
+        "total": 3,
+        "completed": 0,
+        "remaining": 3,
+        "remainingIds": [
+          "AC-1",
+          "AC-2",
+          "AC-3"
+        ],
+        "nextInOrderId": "AC-1"
+      },
+      "findings": [
+        {
+          "id": "677f4d1103455a86",
+          "checkType": "acceptance-coverage",
+          "severity": "error",
+          "message": "Acceptance criterion not verified: AC-1",
+          "primaryEntityId": "AC-1",
+          "entityIds": [
+            "T-impl",
+            "AC-1"
+          ],
+          "context": {
+            "given": "OAuth provider replies",
+            "when": "callback hits /auth/callback",
+            "then": "session token persists",
+            "order": 1,
+            "progressTotal": 3,
+            "progressCompleted": 0,
+            "progressRemaining": 3
+          },
+          "guidance": {
+            "message": "Acceptance criterion #1 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+            "operations": [
+              "mark_acceptance_check"
+            ]
+          }
+        },
+        {
+          "id": "2036f94b6c6c982b",
+          "checkType": "acceptance-coverage",
+          "severity": "error",
+          "message": "Acceptance criterion not verified: AC-2",
+          "primaryEntityId": "AC-2",
+          "entityIds": [
+            "T-impl",
+            "AC-2"
+          ],
+          "context": {
+            "given": "token expires",
+            "when": "refresh request made",
+            "then": "new token issued",
+            "order": 2,
+            "progressTotal": 3,
+            "progressCompleted": 0,
+            "progressRemaining": 3
+          },
+          "guidance": {
+            "message": "Acceptance criterion #2 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+            "operations": [
+              "mark_acceptance_check"
+            ]
+          }
+        },
+        {
+          "id": "63af8f7eb38e0272",
+          "checkType": "acceptance-coverage",
+          "severity": "error",
+          "message": "Acceptance criterion not verified: AC-3",
+          "primaryEntityId": "AC-3",
+          "entityIds": [
+            "T-impl",
+            "AC-3"
+          ],
+          "context": {
+            "given": "user logs out",
+            "when": "session ends",
+            "then": "tokens revoked",
+            "order": 3,
+            "progressTotal": 3,
+            "progressCompleted": 0,
+            "progressRemaining": 3
+          },
+          "guidance": {
+            "message": "Acceptance criterion #3 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+            "operations": [
+              "mark_acceptance_check"
+            ]
+          }
+        }
+      ]
+    },
+    "implementationCoverage": {
+      "checkType": "implementation-coverage",
+      "passed": false,
+      "progress": {
+        "total": 4,
+        "completed": 0,
+        "remaining": 4,
+        "remainingIds": [
+          "IS-1",
+          "IS-2",
+          "IS-3",
+          "IS-4"
+        ],
+        "nextInOrderId": "IS-1"
+      },
+      "findings": [
+        {
+          "id": "9880e3bc4492585b",
+          "checkType": "implementation-coverage",
+          "severity": "error",
+          "message": "Implementation step not completed: IS-1",
+          "primaryEntityId": "IS-1",
+          "entityIds": [
+            "T-impl",
+            "IS-1"
+          ],
+          "context": {
+            "text": "Wire OAuth callback handler",
+            "order": 1,
+            "progressTotal": 4,
+            "progressCompleted": 0,
+            "progressRemaining": 4
+          },
+          "guidance": {
+            "message": "Implementation step has not been completed yet.\n - Position: 1 of 4\n - Progress: 0 done, 4 remaining\n - Description: Wire OAuth callback handler\n\n Implementation steps are the spec's instructions for what to build.\n Each step must be marked done before the work session can complete.\n\n Possible reasons this is pending:\n - You completed the work but have not registered the completion\n - You haven't started the work for this step\n - The step is no longer relevant given decisions made during implementation\n\n Recommended moves:\n 1. Execute the step as described\n 2. Run mark_implementation_step_completion with done=true once completed\n 3. If the step is no longer required, reopen the planning session to remove it",
+            "operations": [
+              "mark_implementation_step_completion"
+            ]
+          }
+        },
+        {
+          "id": "732acb96e8fc8256",
+          "checkType": "implementation-coverage",
+          "severity": "error",
+          "message": "Implementation step not completed: IS-2",
+          "primaryEntityId": "IS-2",
+          "entityIds": [
+            "T-impl",
+            "IS-2"
+          ],
+          "context": {
+            "text": "Persist session token to DB",
+            "order": 2,
+            "progressTotal": 4,
+            "progressCompleted": 0,
+            "progressRemaining": 4
+          },
+          "guidance": {
+            "message": "Implementation step #2 not completed.\n - Persist session token to DB\n\n Execute the step, then run mark_implementation_step_completion.",
+            "operations": [
+              "mark_implementation_step_completion"
+            ]
+          }
+        },
+        {
+          "id": "1fbb46acdab9285e",
+          "checkType": "implementation-coverage",
+          "severity": "error",
+          "message": "Implementation step not completed: IS-3",
+          "primaryEntityId": "IS-3",
+          "entityIds": [
+            "T-impl",
+            "IS-3"
+          ],
+          "context": {
+            "text": "Add session token refresh handler",
+            "order": 3,
+            "progressTotal": 4,
+            "progressCompleted": 0,
+            "progressRemaining": 4
+          },
+          "guidance": {
+            "message": "Implementation step #3 not completed.\n - Add session token refresh handler\n\n Execute the step, then run mark_implementation_step_completion.",
+            "operations": [
+              "mark_implementation_step_completion"
+            ]
+          }
+        },
+        {
+          "id": "da73c0680e003cc9",
+          "checkType": "implementation-coverage",
+          "severity": "error",
+          "message": "Implementation step not completed: IS-4",
+          "primaryEntityId": "IS-4",
+          "entityIds": [
+            "T-impl",
+            "IS-4"
+          ],
+          "context": {
+            "text": "Wire logout / revoke route",
+            "order": 4,
+            "progressTotal": 4,
+            "progressCompleted": 0,
+            "progressRemaining": 4
+          },
+          "guidance": {
+            "message": "Implementation step #4 not completed.\n - Wire logout / revoke route\n\n Execute the step, then run mark_implementation_step_completion.",
+            "operations": [
+              "mark_implementation_step_completion"
+            ]
+          }
+        }
+      ]
+    },
+    "fileActionCoverage": {
+      "checkType": "file-action-coverage",
+      "passed": true,
+      "progress": {
+        "total": 3,
+        "completed": 0,
+        "remaining": 3,
+        "remainingIds": [
+          "src/auth/callback.ts",
+          "src/auth/refresh.ts",
+          "src/auth/logout.ts"
+        ]
+      },
+      "findings": [
+        {
+          "id": "168a39e17aa86d9f",
+          "checkType": "file-action-coverage",
+          "severity": "warn",
+          "message": "Expected file change not recorded: src/auth/callback.ts",
+          "primaryEntityId": "src/auth/callback.ts",
+          "entityIds": [
+            "T-impl",
+            "src/auth/callback.ts"
+          ],
+          "context": {
+            "expectedPath": "src/auth/callback.ts",
+            "expectedAction": "create",
+            "status": "missing",
+            "progressTotal": 3,
+            "progressCompleted": 0,
+            "progressRemaining": 3,
+            "isImplComplete": false,
+            "hasJustification": false
+          },
+          "guidance": {
+            "message": "Planned file not yet registered.\n - create: src/auth/callback.ts\n - Implementation still pending — likely auto-resolves\n\n No immediate action required.",
+            "operations": []
+          }
+        },
+        {
+          "id": "4f19348fd6ab6986",
+          "checkType": "file-action-coverage",
+          "severity": "warn",
+          "message": "Expected file change not recorded: src/auth/logout.ts",
+          "primaryEntityId": "src/auth/logout.ts",
+          "entityIds": [
+            "T-impl",
+            "src/auth/logout.ts"
+          ],
+          "context": {
+            "expectedPath": "src/auth/logout.ts",
+            "expectedAction": "create",
+            "status": "missing",
+            "progressTotal": 3,
+            "progressCompleted": 0,
+            "progressRemaining": 3,
+            "isImplComplete": false,
+            "hasJustification": false
+          },
+          "guidance": {
+            "message": "Planned file not yet registered.\n - create: src/auth/logout.ts\n - Implementation still pending — likely auto-resolves\n\n No immediate action required.",
+            "operations": []
+          }
+        },
+        {
+          "id": "8bdd0ecfab4d31e3",
+          "checkType": "file-action-coverage",
+          "severity": "warn",
+          "message": "Expected file change not recorded: src/auth/refresh.ts",
+          "primaryEntityId": "src/auth/refresh.ts",
+          "entityIds": [
+            "T-impl",
+            "src/auth/refresh.ts"
+          ],
+          "context": {
+            "expectedPath": "src/auth/refresh.ts",
+            "expectedAction": "create",
+            "status": "missing",
+            "progressTotal": 3,
+            "progressCompleted": 0,
+            "progressRemaining": 3,
+            "isImplComplete": false,
+            "hasJustification": false
+          },
+          "guidance": {
+            "message": "Planned file not yet registered.\n - create: src/auth/refresh.ts\n - Implementation still pending — likely auto-resolves\n\n No immediate action required.",
+            "operations": []
+          }
+        }
+      ]
+    },
+    "testResultPresence": {
+      "checkType": "test-result-presence",
+      "passed": true,
+      "progress": {
+        "total": 0,
+        "completed": 0,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    }
+  },
+  "findings": [
+    {
+      "id": "677f4d1103455a86",
+      "checkType": "acceptance-coverage",
+      "severity": "error",
+      "message": "Acceptance criterion not verified: AC-1",
+      "primaryEntityId": "AC-1",
+      "entityIds": [
+        "T-impl",
+        "AC-1"
+      ],
+      "context": {
+        "given": "OAuth provider replies",
+        "when": "callback hits /auth/callback",
+        "then": "session token persists",
+        "order": 1,
+        "progressTotal": 3,
+        "progressCompleted": 0,
+        "progressRemaining": 3
+      },
+      "guidance": {
+        "message": "Acceptance criterion #1 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+        "operations": [
+          "mark_acceptance_check"
+        ]
+      }
+    },
+    {
+      "id": "2036f94b6c6c982b",
+      "checkType": "acceptance-coverage",
+      "severity": "error",
+      "message": "Acceptance criterion not verified: AC-2",
+      "primaryEntityId": "AC-2",
+      "entityIds": [
+        "T-impl",
+        "AC-2"
+      ],
+      "context": {
+        "given": "token expires",
+        "when": "refresh request made",
+        "then": "new token issued",
+        "order": 2,
+        "progressTotal": 3,
+        "progressCompleted": 0,
+        "progressRemaining": 3
+      },
+      "guidance": {
+        "message": "Acceptance criterion #2 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+        "operations": [
+          "mark_acceptance_check"
+        ]
+      }
+    },
+    {
+      "id": "63af8f7eb38e0272",
+      "checkType": "acceptance-coverage",
+      "severity": "error",
+      "message": "Acceptance criterion not verified: AC-3",
+      "primaryEntityId": "AC-3",
+      "entityIds": [
+        "T-impl",
+        "AC-3"
+      ],
+      "context": {
+        "given": "user logs out",
+        "when": "session ends",
+        "then": "tokens revoked",
+        "order": 3,
+        "progressTotal": 3,
+        "progressCompleted": 0,
+        "progressRemaining": 3
+      },
+      "guidance": {
+        "message": "Acceptance criterion #3 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+        "operations": [
+          "mark_acceptance_check"
+        ]
+      }
+    },
+    {
+      "id": "168a39e17aa86d9f",
+      "checkType": "file-action-coverage",
+      "severity": "warn",
+      "message": "Expected file change not recorded: src/auth/callback.ts",
+      "primaryEntityId": "src/auth/callback.ts",
+      "entityIds": [
+        "T-impl",
+        "src/auth/callback.ts"
+      ],
+      "context": {
+        "expectedPath": "src/auth/callback.ts",
+        "expectedAction": "create",
+        "status": "missing",
+        "progressTotal": 3,
+        "progressCompleted": 0,
+        "progressRemaining": 3,
+        "isImplComplete": false,
+        "hasJustification": false
+      },
+      "guidance": {
+        "message": "Planned file not yet registered.\n - create: src/auth/callback.ts\n - Implementation still pending — likely auto-resolves\n\n No immediate action required.",
+        "operations": []
+      }
+    },
+    {
+      "id": "4f19348fd6ab6986",
+      "checkType": "file-action-coverage",
+      "severity": "warn",
+      "message": "Expected file change not recorded: src/auth/logout.ts",
+      "primaryEntityId": "src/auth/logout.ts",
+      "entityIds": [
+        "T-impl",
+        "src/auth/logout.ts"
+      ],
+      "context": {
+        "expectedPath": "src/auth/logout.ts",
+        "expectedAction": "create",
+        "status": "missing",
+        "progressTotal": 3,
+        "progressCompleted": 0,
+        "progressRemaining": 3,
+        "isImplComplete": false,
+        "hasJustification": false
+      },
+      "guidance": {
+        "message": "Planned file not yet registered.\n - create: src/auth/logout.ts\n - Implementation still pending — likely auto-resolves\n\n No immediate action required.",
+        "operations": []
+      }
+    },
+    {
+      "id": "8bdd0ecfab4d31e3",
+      "checkType": "file-action-coverage",
+      "severity": "warn",
+      "message": "Expected file change not recorded: src/auth/refresh.ts",
+      "primaryEntityId": "src/auth/refresh.ts",
+      "entityIds": [
+        "T-impl",
+        "src/auth/refresh.ts"
+      ],
+      "context": {
+        "expectedPath": "src/auth/refresh.ts",
+        "expectedAction": "create",
+        "status": "missing",
+        "progressTotal": 3,
+        "progressCompleted": 0,
+        "progressRemaining": 3,
+        "isImplComplete": false,
+        "hasJustification": false
+      },
+      "guidance": {
+        "message": "Planned file not yet registered.\n - create: src/auth/refresh.ts\n - Implementation still pending — likely auto-resolves\n\n No immediate action required.",
+        "operations": []
+      }
+    },
+    {
+      "id": "9880e3bc4492585b",
+      "checkType": "implementation-coverage",
+      "severity": "error",
+      "message": "Implementation step not completed: IS-1",
+      "primaryEntityId": "IS-1",
+      "entityIds": [
+        "T-impl",
+        "IS-1"
+      ],
+      "context": {
+        "text": "Wire OAuth callback handler",
+        "order": 1,
+        "progressTotal": 4,
+        "progressCompleted": 0,
+        "progressRemaining": 4
+      },
+      "guidance": {
+        "message": "Implementation step has not been completed yet.\n - Position: 1 of 4\n - Progress: 0 done, 4 remaining\n - Description: Wire OAuth callback handler\n\n Implementation steps are the spec's instructions for what to build.\n Each step must be marked done before the work session can complete.\n\n Possible reasons this is pending:\n - You completed the work but have not registered the completion\n - You haven't started the work for this step\n - The step is no longer relevant given decisions made during implementation\n\n Recommended moves:\n 1. Execute the step as described\n 2. Run mark_implementation_step_completion with done=true once completed\n 3. If the step is no longer required, reopen the planning session to remove it",
+        "operations": [
+          "mark_implementation_step_completion"
+        ]
+      }
+    },
+    {
+      "id": "732acb96e8fc8256",
+      "checkType": "implementation-coverage",
+      "severity": "error",
+      "message": "Implementation step not completed: IS-2",
+      "primaryEntityId": "IS-2",
+      "entityIds": [
+        "T-impl",
+        "IS-2"
+      ],
+      "context": {
+        "text": "Persist session token to DB",
+        "order": 2,
+        "progressTotal": 4,
+        "progressCompleted": 0,
+        "progressRemaining": 4
+      },
+      "guidance": {
+        "message": "Implementation step #2 not completed.\n - Persist session token to DB\n\n Execute the step, then run mark_implementation_step_completion.",
+        "operations": [
+          "mark_implementation_step_completion"
+        ]
+      }
+    },
+    {
+      "id": "1fbb46acdab9285e",
+      "checkType": "implementation-coverage",
+      "severity": "error",
+      "message": "Implementation step not completed: IS-3",
+      "primaryEntityId": "IS-3",
+      "entityIds": [
+        "T-impl",
+        "IS-3"
+      ],
+      "context": {
+        "text": "Add session token refresh handler",
+        "order": 3,
+        "progressTotal": 4,
+        "progressCompleted": 0,
+        "progressRemaining": 4
+      },
+      "guidance": {
+        "message": "Implementation step #3 not completed.\n - Add session token refresh handler\n\n Execute the step, then run mark_implementation_step_completion.",
+        "operations": [
+          "mark_implementation_step_completion"
+        ]
+      }
+    },
+    {
+      "id": "da73c0680e003cc9",
+      "checkType": "implementation-coverage",
+      "severity": "error",
+      "message": "Implementation step not completed: IS-4",
+      "primaryEntityId": "IS-4",
+      "entityIds": [
+        "T-impl",
+        "IS-4"
+      ],
+      "context": {
+        "text": "Wire logout / revoke route",
+        "order": 4,
+        "progressTotal": 4,
+        "progressCompleted": 0,
+        "progressRemaining": 4
+      },
+      "guidance": {
+        "message": "Implementation step #4 not completed.\n - Wire logout / revoke route\n\n Execute the step, then run mark_implementation_step_completion.",
+        "operations": [
+          "mark_implementation_step_completion"
+        ]
+      }
+    }
+  ],
+  "nextStep": {
+    "reason": "continue",
+    "action": "check-imp-step",
+    "implStep": {
+      "id": "IS-1",
+      "text": "Wire OAuth callback handler",
+      "order": 1
+    },
+    "progress": {
+      "total": 4,
+      "completed": 0,
+      "remaining": 4,
+      "remainingIds": [
+        "IS-1",
+        "IS-2",
+        "IS-3",
+        "IS-4"
+      ],
+      "nextInOrderId": "IS-1"
+    },
+    "guidance": {
+      "message": "Next implementation step to complete:\n - Position: 1 of 4\n - Progress: 0 done, 4 remaining\n - Text: Wire OAuth callback handler\n\n Execute the step as described. Once the work for this step is complete,\n record completion so the engine advances to the next step or action.\n\n Recommended moves:\n 1. Read the text carefully and execute the implied work\n 2. Run mark_implementation_step_completion with done=true to advance",
+      "operations": [
+        "mark_implementation_step_completion"
+      ]
+    }
+  },
+  "summary": null,
+  "meta": {
+    "engineVersion": "0.1.0",
+    "configHash": "cfg-e5e5b8b6"
+  }
+}

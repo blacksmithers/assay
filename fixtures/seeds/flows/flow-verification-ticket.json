@@ -1,0 +1,271 @@
+{
+  "name": "flow-verification-ticket",
+  "description": "Verification ticket lifecycle (0 IS, 2 testTypes, 1 referenced file, 3 ACs). Embeds tests-failing \u2192 supersede recovery, skipped \u2192 justification lifecycle, and a final check-mode review.",
+  "initialContext": {
+    "ticket": {
+      "id": "T-verif",
+      "epicId": "E-1",
+      "title": "Verify OAuth flow end-to-end",
+      "ticketType": "verification",
+      "complexity": "small",
+      "estimatedMinutes": 60,
+      "acceptanceCriteria": [
+        {
+          "id": "AC-1",
+          "given": "unit suite",
+          "when": "pnpm test runs",
+          "then": "all unit tests pass",
+          "order": 1
+        },
+        {
+          "id": "AC-2",
+          "given": "e2e suite",
+          "when": "playwright runs",
+          "then": "critical paths pass",
+          "order": 2
+        },
+        {
+          "id": "AC-3",
+          "given": "reviewer reads doc",
+          "when": "verification doc exists",
+          "then": "sign-off recorded",
+          "order": 3
+        }
+      ],
+      "implementationSteps": [],
+      "filesToBeCreated": [],
+      "filesToBeModified": [],
+      "filesToBeDeleted": [],
+      "filesToBeReferenced": [
+        "docs/oauth-verification.md"
+      ],
+      "testSpecification": {
+        "testTypes": [
+          "unit",
+          "e2e"
+        ],
+        "qualityGates": [
+          "all tests passing",
+          "no skips without justification"
+        ],
+        "testCommands": [
+          "pnpm test",
+          "pnpm test:e2e"
+        ]
+      },
+      "guardrails": [],
+      "codeReferences": [],
+      "typeReferences": [],
+      "blueprintReferences": [],
+      "dependencies": []
+    },
+    "workSession": {
+      "id": "ws-2",
+      "ticketId": "T-verif",
+      "projectId": "p-1",
+      "status": "active",
+      "startedAt": "2026-01-02T00:00:00.000Z"
+    },
+    "acceptanceChecks": [],
+    "implStepCompletions": [],
+    "fileChanges": [],
+    "testResults": []
+  },
+  "steps": [
+    {
+      "description": "Initial call \u2014 action=check-imp-step. Engine sees IS not applicable \u2192 skips to first add-test-results target (unit).",
+      "options": {
+        "mode": "action",
+        "action": "check-imp-step"
+      }
+    },
+    {
+      "description": "Register unit test result with allPassed=false, failed=2 \u2192 engine surfaces tests-failing.",
+      "options": {
+        "mode": "action",
+        "action": "add-test-results"
+      },
+      "contextDelta": {
+        "addTestResults": [
+          {
+            "id": "tr-unit-failing",
+            "workSessionId": "ws-2",
+            "projectId": "p-1",
+            "testType": "unit",
+            "passed": 18,
+            "failed": 2,
+            "skipped": 0,
+            "total": 20,
+            "allPassed": false,
+            "command": "pnpm test",
+            "skippedJustifications": [],
+            "failureJustifications": [],
+            "runAt": "2026-01-02T00:10:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Deviation \u2014 agent fixes and registers a NEW unit test result (same testType+command) with allPassed=true. Engine applies supersede semantics.",
+      "options": {
+        "mode": "action",
+        "action": "add-test-results"
+      },
+      "contextDelta": {
+        "addTestResults": [
+          {
+            "id": "tr-unit-passing",
+            "workSessionId": "ws-2",
+            "projectId": "p-1",
+            "testType": "unit",
+            "passed": 20,
+            "failed": 0,
+            "skipped": 0,
+            "total": 20,
+            "allPassed": true,
+            "command": "pnpm test",
+            "skippedJustifications": [],
+            "failureJustifications": [],
+            "runAt": "2026-01-02T00:20:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Register e2e test result with skipped=3 (allPassed=true, but skips lack justifications). Engine surfaces skipped-without-justification.",
+      "options": {
+        "mode": "action",
+        "action": "add-test-results"
+      },
+      "contextDelta": {
+        "addTestResults": [
+          {
+            "id": "tr-e2e-skipped",
+            "workSessionId": "ws-2",
+            "projectId": "p-1",
+            "testType": "e2e",
+            "passed": 7,
+            "failed": 0,
+            "skipped": 3,
+            "total": 10,
+            "allPassed": true,
+            "command": "pnpm test:e2e",
+            "skippedJustifications": [],
+            "failureJustifications": [],
+            "runAt": "2026-01-02T00:30:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Agent attaches justifications via patch (3 entries). Engine sees skipped + justifications \u2192 satisfied.",
+      "options": {
+        "mode": "action",
+        "action": "add-test-results"
+      },
+      "contextDelta": {
+        "updateTestResults": [
+          {
+            "id": "tr-e2e-skipped",
+            "patch": {
+              "skippedJustifications": [
+                "Browser checkout flow blocked by 3rd-party flake",
+                "Mobile-only path; covered manually",
+                "Pending fixture refactor"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "description": "Register file #1 (referenced, status=matched). Continue \u2192 next-action check-ac.",
+      "options": {
+        "mode": "action",
+        "action": "add-files-changes"
+      },
+      "contextDelta": {
+        "addFileChanges": [
+          {
+            "id": "fc-doc",
+            "workSessionId": "ws-2",
+            "ticketId": "T-verif",
+            "projectId": "p-1",
+            "expectedPath": "docs/oauth-verification.md",
+            "expectedAction": "reference",
+            "actualAction": "referenced",
+            "status": "matched",
+            "justificationApproved": "pending",
+            "recordedAt": "2026-01-02T00:40:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Mark AC #1 verified.",
+      "options": {
+        "mode": "action",
+        "action": "check-ac"
+      },
+      "contextDelta": {
+        "addAcceptanceChecks": [
+          {
+            "id": "chk-V-AC-1",
+            "workSessionId": "ws-2",
+            "criterionId": "AC-1",
+            "ticketId": "T-verif",
+            "projectId": "p-1",
+            "checked": true,
+            "checkedAt": "2026-01-02T00:50:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Mark AC #2 verified.",
+      "options": {
+        "mode": "action",
+        "action": "check-ac"
+      },
+      "contextDelta": {
+        "addAcceptanceChecks": [
+          {
+            "id": "chk-V-AC-2",
+            "workSessionId": "ws-2",
+            "criterionId": "AC-2",
+            "ticketId": "T-verif",
+            "projectId": "p-1",
+            "checked": true,
+            "checkedAt": "2026-01-02T00:55:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Mark AC #3 verified. Engine returns complete.",
+      "options": {
+        "mode": "action",
+        "action": "check-ac"
+      },
+      "contextDelta": {
+        "addAcceptanceChecks": [
+          {
+            "id": "chk-V-AC-3",
+            "workSessionId": "ws-2",
+            "criterionId": "AC-3",
+            "ticketId": "T-verif",
+            "projectId": "p-1",
+            "checked": true,
+            "checkedAt": "2026-01-02T01:00:00.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Post-complete review \u2014 agent did NOT invoke complete_work_session. Reviewer calls mode=check. Summary confirms zero pending, recommends complete_work_session.",
+      "options": {
+        "mode": "check"
+      }
+    }
+  ]
+}

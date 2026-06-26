@@ -1,0 +1,158 @@
+{
+  "passed": false,
+  "mode": "action",
+  "checks": {
+    "acceptanceCoverage": {
+      "checkType": "acceptance-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "implementationCoverage": {
+      "checkType": "implementation-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "fileActionCoverage": {
+      "checkType": "file-action-coverage",
+      "passed": false,
+      "progress": {
+        "total": 1,
+        "completed": 0,
+        "remaining": 1,
+        "remainingIds": [
+          "a.ts"
+        ]
+      },
+      "findings": [
+        {
+          "id": "401fc751baa5211b",
+          "checkType": "file-action-coverage",
+          "severity": "error",
+          "message": "Expected file change not recorded: a.ts",
+          "primaryEntityId": "fc-1",
+          "entityIds": [
+            "T-1",
+            "a.ts",
+            "fc-1"
+          ],
+          "context": {
+            "expectedPath": "a.ts",
+            "expectedAction": "create",
+            "status": "missing",
+            "progressTotal": 1,
+            "progressCompleted": 0,
+            "progressRemaining": 1,
+            "isImplComplete": true,
+            "fileChangeId": "fc-1",
+            "hasJustification": true,
+            "justificationApproved": "rejected"
+          },
+          "guidance": {
+            "message": "Justification not accepted — review file action.\n - Path: a.ts\n - Status: missing (create -> <actualAction>)\n - Approval state: rejected\n\n The reviewer rejected the justification you provided. The divergence remains\n unresolved. Either the action was wrong, the justification was not strong enough,\n or the spec needs updating.\n\n Possible reasons:\n - The reviewer believed the planned action was still correct and should be performed\n - The justification did not adequately explain the divergence\n - The reviewer wants the spec amended instead of justified\n\n Recommended moves:\n 1. Re-read the rejection context (typically passed alongside this finding)\n 2. If the planned action should have been taken, run record_file_change with the corrected outcome\n 3. If the justification needs rework, run amend_file_change_justification with stronger reasoning\n 4. If the spec is wrong, reopen the planning session",
+            "operations": [
+              "record_file_change",
+              "amend_file_change_justification"
+            ]
+          }
+        }
+      ]
+    },
+    "testResultPresence": {
+      "checkType": "test-result-presence",
+      "passed": true,
+      "progress": {
+        "total": 0,
+        "completed": 0,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    }
+  },
+  "findings": [
+    {
+      "id": "401fc751baa5211b",
+      "checkType": "file-action-coverage",
+      "severity": "error",
+      "message": "Expected file change not recorded: a.ts",
+      "primaryEntityId": "fc-1",
+      "entityIds": [
+        "T-1",
+        "a.ts",
+        "fc-1"
+      ],
+      "context": {
+        "expectedPath": "a.ts",
+        "expectedAction": "create",
+        "status": "missing",
+        "progressTotal": 1,
+        "progressCompleted": 0,
+        "progressRemaining": 1,
+        "isImplComplete": true,
+        "fileChangeId": "fc-1",
+        "hasJustification": true,
+        "justificationApproved": "rejected"
+      },
+      "guidance": {
+        "message": "Justification not accepted — review file action.\n - Path: a.ts\n - Status: missing (create -> <actualAction>)\n - Approval state: rejected\n\n The reviewer rejected the justification you provided. The divergence remains\n unresolved. Either the action was wrong, the justification was not strong enough,\n or the spec needs updating.\n\n Possible reasons:\n - The reviewer believed the planned action was still correct and should be performed\n - The justification did not adequately explain the divergence\n - The reviewer wants the spec amended instead of justified\n\n Recommended moves:\n 1. Re-read the rejection context (typically passed alongside this finding)\n 2. If the planned action should have been taken, run record_file_change with the corrected outcome\n 3. If the justification needs rework, run amend_file_change_justification with stronger reasoning\n 4. If the spec is wrong, reopen the planning session",
+        "operations": [
+          "record_file_change",
+          "amend_file_change_justification"
+        ]
+      }
+    }
+  ],
+  "nextStep": {
+    "reason": "resolve",
+    "action": "add-files-changes",
+    "issues": [
+      {
+        "fileChange": {
+          "id": "fc-1",
+          "workSessionId": "ws-1",
+          "ticketId": "T-1",
+          "projectId": "p-1",
+          "expectedPath": "a.ts",
+          "expectedAction": "create",
+          "status": "missing",
+          "justification": "Was rejected",
+          "justificationApproved": "rejected",
+          "recordedAt": "2026-01-01T00:00:00.000Z"
+        },
+        "issue": "justification-rejected"
+      }
+    ],
+    "progress": {
+      "total": 1,
+      "completed": 0,
+      "remaining": 1,
+      "remainingIds": [
+        "a.ts"
+      ]
+    },
+    "guidance": {
+      "message": "File change issues require resolution before adding new entries.\n - Open issues: 1\n\n - a.ts (justification rejected): correct via record_file_change OR amend_file_change_justification\n\n Issues take priority over registering new file actions — assayforge prevents\n progress until each open issue is resolved. Address them in the order shown.\n\n Recommended moves:\n 1. Resolve the first issue per its specific guidance (operations vary by issue type)\n 2. Continue down the list; each resolution may surface the next pending action",
+      "operations": [
+        "record_file_change",
+        "amend_file_change_justification"
+      ]
+    }
+  },
+  "summary": null,
+  "meta": {
+    "engineVersion": "0.1.0",
+    "configHash": "cfg-e5e5b8b6"
+  }
+}

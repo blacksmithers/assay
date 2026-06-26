@@ -1,0 +1,154 @@
+{
+  "passed": false,
+  "mode": "action",
+  "checks": {
+    "acceptanceCoverage": {
+      "checkType": "acceptance-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "implementationCoverage": {
+      "checkType": "implementation-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "fileActionCoverage": {
+      "checkType": "file-action-coverage",
+      "passed": false,
+      "progress": {
+        "total": 2,
+        "completed": 1,
+        "remaining": 1,
+        "remainingIds": [
+          "extra.ts"
+        ]
+      },
+      "findings": [
+        {
+          "id": "98d81aa3f7f316d2",
+          "checkType": "file-action-coverage",
+          "severity": "error",
+          "message": "Unexpected file change recorded: extra.ts",
+          "primaryEntityId": "fc-extra",
+          "entityIds": [
+            "T-1",
+            "extra.ts",
+            "fc-extra"
+          ],
+          "context": {
+            "expectedPath": "extra.ts",
+            "expectedAction": "create",
+            "status": "extra",
+            "progressTotal": 2,
+            "progressCompleted": 1,
+            "progressRemaining": 1,
+            "isImplComplete": true,
+            "fileChangeId": "fc-extra",
+            "hasJustification": false,
+            "justificationApproved": "pending"
+          },
+          "guidance": {
+            "message": "A file was touched without being declared in the spec.\n - Path: extra.ts\n - Recorded action: <actualAction>\n\n The spec does not list this file in any filesToBe* group, but the agent\n registered a change for it. Untracked file changes erode planning fidelity\n and should be either declared or justified.\n\n Possible reasons:\n - The file is genuinely necessary for the work but was missed during planning\n - The file is incidental (e.g., generated artifact, lockfile update) and warrants justification\n - The recording was mistaken (the file should not appear at all)\n\n Recommended moves:\n 1. Decide whether the change is essential to the ticket or peripheral\n 2. If essential, reopen the planning session to add the file to the appropriate filesToBe* list\n 3. If peripheral but legitimate, attach add_file_change_justification explaining why\n 4. If the recording was wrong, the operations layer rejects deletes — contact lifecycle to clean up",
+            "operations": [
+              "add_file_change_justification"
+            ]
+          }
+        }
+      ]
+    },
+    "testResultPresence": {
+      "checkType": "test-result-presence",
+      "passed": true,
+      "progress": {
+        "total": 0,
+        "completed": 0,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    }
+  },
+  "findings": [
+    {
+      "id": "98d81aa3f7f316d2",
+      "checkType": "file-action-coverage",
+      "severity": "error",
+      "message": "Unexpected file change recorded: extra.ts",
+      "primaryEntityId": "fc-extra",
+      "entityIds": [
+        "T-1",
+        "extra.ts",
+        "fc-extra"
+      ],
+      "context": {
+        "expectedPath": "extra.ts",
+        "expectedAction": "create",
+        "status": "extra",
+        "progressTotal": 2,
+        "progressCompleted": 1,
+        "progressRemaining": 1,
+        "isImplComplete": true,
+        "fileChangeId": "fc-extra",
+        "hasJustification": false,
+        "justificationApproved": "pending"
+      },
+      "guidance": {
+        "message": "A file was touched without being declared in the spec.\n - Path: extra.ts\n - Recorded action: <actualAction>\n\n The spec does not list this file in any filesToBe* group, but the agent\n registered a change for it. Untracked file changes erode planning fidelity\n and should be either declared or justified.\n\n Possible reasons:\n - The file is genuinely necessary for the work but was missed during planning\n - The file is incidental (e.g., generated artifact, lockfile update) and warrants justification\n - The recording was mistaken (the file should not appear at all)\n\n Recommended moves:\n 1. Decide whether the change is essential to the ticket or peripheral\n 2. If essential, reopen the planning session to add the file to the appropriate filesToBe* list\n 3. If peripheral but legitimate, attach add_file_change_justification explaining why\n 4. If the recording was wrong, the operations layer rejects deletes — contact lifecycle to clean up",
+        "operations": [
+          "add_file_change_justification"
+        ]
+      }
+    }
+  ],
+  "nextStep": {
+    "reason": "resolve",
+    "action": "add-files-changes",
+    "issues": [
+      {
+        "fileChange": {
+          "id": "fc-extra",
+          "workSessionId": "ws-1",
+          "ticketId": "T-1",
+          "projectId": "p-1",
+          "expectedPath": "extra.ts",
+          "expectedAction": "create",
+          "status": "extra",
+          "justificationApproved": "pending",
+          "recordedAt": "2026-01-02T00:00:00.000Z"
+        },
+        "issue": "extra-without-justification"
+      }
+    ],
+    "progress": {
+      "total": 2,
+      "completed": 1,
+      "remaining": 1,
+      "remainingIds": [
+        "extra.ts"
+      ]
+    },
+    "guidance": {
+      "message": "File change issues require resolution before adding new entries.\n - Open issues: 1\n\n - extra.ts (extra without justification): declare via planning OR attach add_file_change_justification\n\n Issues take priority over registering new file actions — assayforge prevents\n progress until each open issue is resolved. Address them in the order shown.\n\n Recommended moves:\n 1. Resolve the first issue per its specific guidance (operations vary by issue type)\n 2. Continue down the list; each resolution may surface the next pending action",
+      "operations": [
+        "add_file_change_justification"
+      ]
+    }
+  },
+  "summary": null,
+  "meta": {
+    "engineVersion": "0.1.0",
+    "configHash": "cfg-e5e5b8b6"
+  }
+}

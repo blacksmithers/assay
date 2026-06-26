@@ -1,0 +1,114 @@
+{
+  "name": "c4-failure-with-justification",
+  "description": "C4 test-result-presence: failing tests + failureJustifications populated \u2192 silent, no issue.",
+  "context": {
+    "ticket": {
+      "id": "T-1",
+      "epicId": "E-1",
+      "title": "Stub ticket",
+      "ticketType": "implementation",
+      "complexity": "small",
+      "estimatedMinutes": 30,
+      "acceptanceCriteria": [
+        {
+          "id": "AC-1",
+          "given": "g",
+          "when": "w",
+          "then": "t",
+          "order": 1
+        }
+      ],
+      "implementationSteps": [
+        {
+          "id": "IS-1",
+          "order": 1,
+          "text": "Do the thing"
+        }
+      ],
+      "filesToBeCreated": [
+        "a.ts"
+      ],
+      "filesToBeModified": [],
+      "filesToBeDeleted": [],
+      "filesToBeReferenced": [],
+      "testSpecification": {
+        "testTypes": [
+          "unit"
+        ],
+        "qualityGates": [
+          "gate"
+        ],
+        "testCommands": [
+          "npm test"
+        ]
+      },
+      "guardrails": [],
+      "codeReferences": [],
+      "typeReferences": [],
+      "blueprintReferences": [],
+      "dependencies": []
+    },
+    "workSession": {
+      "id": "ws-1",
+      "ticketId": "T-1",
+      "projectId": "p-1",
+      "status": "active",
+      "startedAt": "2026-01-01T00:00:00.000Z"
+    },
+    "acceptanceChecks": [
+      {
+        "id": "chk-AC-1",
+        "workSessionId": "ws-1",
+        "criterionId": "AC-1",
+        "ticketId": "T-1",
+        "projectId": "p-1",
+        "checked": true
+      }
+    ],
+    "implStepCompletions": [
+      {
+        "id": "cpl-IS-1",
+        "workSessionId": "ws-1",
+        "stepId": "IS-1",
+        "ticketId": "T-1",
+        "projectId": "p-1",
+        "done": true
+      }
+    ],
+    "fileChanges": [
+      {
+        "id": "fc-1",
+        "workSessionId": "ws-1",
+        "ticketId": "T-1",
+        "projectId": "p-1",
+        "expectedPath": "a.ts",
+        "expectedAction": "create",
+        "status": "matched",
+        "justificationApproved": "pending",
+        "recordedAt": "2026-01-01T00:00:00.000Z"
+      }
+    ],
+    "testResults": [
+      {
+        "id": "tr-unit-fail-justified",
+        "workSessionId": "ws-1",
+        "projectId": "p-1",
+        "testType": "unit",
+        "passed": 8,
+        "failed": 2,
+        "skipped": 0,
+        "total": 10,
+        "allPassed": false,
+        "skippedJustifications": [],
+        "failureJustifications": [
+          "known flake"
+        ],
+        "runAt": "2026-01-02T00:00:00.000Z"
+      }
+    ]
+  },
+  "options": {
+    "mode": "action",
+    "action": "add-test-results"
+  }
+}

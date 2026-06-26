@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+*.so
+
+# Virtual envs / tooling
+.venv/
+venv/
+.env
+
+# Test / type caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# Node
+node_modules/
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+
+# uv (library: lockfile not committed, like crucible)
+uv.lock

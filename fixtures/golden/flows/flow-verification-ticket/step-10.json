@@ -1,0 +1,121 @@
+{
+  "passed": false,
+  "mode": "check",
+  "checks": {
+    "acceptanceCoverage": {
+      "checkType": "acceptance-coverage",
+      "passed": true,
+      "progress": {
+        "total": 3,
+        "completed": 3,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "implementationCoverage": {
+      "checkType": "implementation-coverage",
+      "passed": true,
+      "progress": {
+        "total": 0,
+        "completed": 0,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "fileActionCoverage": {
+      "checkType": "file-action-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "testResultPresence": {
+      "checkType": "test-result-presence",
+      "passed": false,
+      "progress": {
+        "total": 2,
+        "completed": 2,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": [
+        {
+          "id": "11905ce0ee4ae8ea",
+          "checkType": "test-result-presence",
+          "severity": "error",
+          "message": "Tests failing: unit",
+          "primaryEntityId": "tr-unit-failing",
+          "entityIds": [
+            "T-verif",
+            "tr-unit-failing"
+          ],
+          "context": {
+            "issue": "tests-failing",
+            "testType": "unit",
+            "failed": 2,
+            "passed": 18,
+            "total": 20,
+            "command": "pnpm test"
+          },
+          "guidance": {
+            "message": "Tests failing without justification.\n - unit: 2/20 failed\n\n Fix and re-run (auto-supersedes), OR justify via add_failure_justification.",
+            "operations": [
+              "record_test_result",
+              "add_failure_justification"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "findings": [
+    {
+      "id": "11905ce0ee4ae8ea",
+      "checkType": "test-result-presence",
+      "severity": "error",
+      "message": "Tests failing: unit",
+      "primaryEntityId": "tr-unit-failing",
+      "entityIds": [
+        "T-verif",
+        "tr-unit-failing"
+      ],
+      "context": {
+        "issue": "tests-failing",
+        "testType": "unit",
+        "failed": 2,
+        "passed": 18,
+        "total": 20,
+        "command": "pnpm test"
+      },
+      "guidance": {
+        "message": "Tests failing without justification.\n - unit: 2/20 failed\n\n Fix and re-run (auto-supersedes), OR justify via add_failure_justification.",
+        "operations": [
+          "record_test_result",
+          "add_failure_justification"
+        ]
+      }
+    }
+  ],
+  "nextStep": null,
+  "summary": {
+    "message": "Ticket completion status:\n\n - (no actions applicable)\n\n Total pending: 0 items, 1 blocking issue(s).\n\n Start here:\n The work session is ready for closure. Invoke complete_work_session.\n\nEach issue has its own compact guidance in the findings list above.\n Switch to mode='action' for verbose remediation guidance on a specific issue.",
+    "pendingByAction": {
+      "check-imp-step": 0,
+      "add-test-results": 0,
+      "add-files-changes": 0,
+      "check-ac": 0
+    },
+    "totalPending": 0,
+    "blockingIssues": 1
+  },
+  "meta": {
+    "engineVersion": "0.1.0",
+    "configHash": "cfg-e5e5b8b6"
+  }
+}

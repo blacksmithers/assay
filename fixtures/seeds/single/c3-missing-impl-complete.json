@@ -1,0 +1,74 @@
+{
+  "name": "c3-missing-impl-complete",
+  "description": "C3 file-action-coverage: declared file not registered, IS complete \u2192 severity=error.",
+  "context": {
+    "ticket": {
+      "id": "T-1",
+      "epicId": "E-1",
+      "title": "Stub ticket",
+      "ticketType": "implementation",
+      "complexity": "small",
+      "estimatedMinutes": 30,
+      "acceptanceCriteria": [
+        {
+          "id": "AC-1",
+          "given": "g",
+          "when": "w",
+          "then": "t",
+          "order": 1
+        }
+      ],
+      "implementationSteps": [
+        {
+          "id": "IS-1",
+          "order": 1,
+          "text": "Do the thing"
+        }
+      ],
+      "filesToBeCreated": [
+        "a.ts"
+      ],
+      "filesToBeModified": [],
+      "filesToBeDeleted": [],
+      "filesToBeReferenced": [],
+      "guardrails": [],
+      "codeReferences": [],
+      "typeReferences": [],
+      "blueprintReferences": [],
+      "dependencies": []
+    },
+    "workSession": {
+      "id": "ws-1",
+      "ticketId": "T-1",
+      "projectId": "p-1",
+      "status": "active",
+      "startedAt": "2026-01-01T00:00:00.000Z"
+    },
+    "acceptanceChecks": [
+      {
+        "id": "chk-AC-1",
+        "workSessionId": "ws-1",
+        "criterionId": "AC-1",
+        "ticketId": "T-1",
+        "projectId": "p-1",
+        "checked": true
+      }
+    ],
+    "implStepCompletions": [
+      {
+        "id": "cpl-IS-1",
+        "workSessionId": "ws-1",
+        "stepId": "IS-1",
+        "ticketId": "T-1",
+        "projectId": "p-1",
+        "done": true
+      }
+    ],
+    "fileChanges": [],
+    "testResults": []
+  },
+  "options": {
+    "mode": "action",
+    "action": "add-files-changes"
+  }
+}

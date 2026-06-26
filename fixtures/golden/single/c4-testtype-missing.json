@@ -1,0 +1,136 @@
+{
+  "passed": false,
+  "mode": "action",
+  "checks": {
+    "acceptanceCoverage": {
+      "checkType": "acceptance-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "implementationCoverage": {
+      "checkType": "implementation-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "fileActionCoverage": {
+      "checkType": "file-action-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "testResultPresence": {
+      "checkType": "test-result-presence",
+      "passed": false,
+      "progress": {
+        "total": 1,
+        "completed": 0,
+        "remaining": 1,
+        "remainingIds": [
+          "unit"
+        ]
+      },
+      "findings": [
+        {
+          "id": "58c3630b982bf9a7",
+          "checkType": "test-result-presence",
+          "severity": "error",
+          "message": "Test type not satisfied: unit",
+          "primaryEntityId": "unit",
+          "entityIds": [
+            "T-1"
+          ],
+          "context": {
+            "issue": "missing-coverage",
+            "testType": "unit",
+            "progressTotal": 1,
+            "progressCompleted": 0,
+            "progressRemaining": 1
+          },
+          "guidance": {
+            "message": "A required test type has no recorded result.\n - Test type: unit\n - Recorded results for this type: <resultCount>\n\n The spec declares this test type as required for the ticket. No registered result\n satisfies it (either no run is recorded, or all recorded runs have allPassed=false\n without a passing retry).\n\n Possible reasons:\n - You haven't run the tests for this type yet\n - You ran the tests but did not register the result via record_test_result\n - All runs failed; you need to fix the failures and re-run, or justify the failure\n\n Recommended moves:\n 1. Run the test command(s) for unit (typically present in ticket.testSpecification.testCommands)\n 2. Register the outcome via record_test_result with the actual pass/fail/skip counts\n 3. If the tests cannot pass and the failures are intentional, attach add_failure_justification\n 4. If the tests must be skipped (e.g., environment unavailable), attach add_skip_justification",
+            "operations": [
+              "record_test_result",
+              "add_skip_justification"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "findings": [
+    {
+      "id": "58c3630b982bf9a7",
+      "checkType": "test-result-presence",
+      "severity": "error",
+      "message": "Test type not satisfied: unit",
+      "primaryEntityId": "unit",
+      "entityIds": [
+        "T-1"
+      ],
+      "context": {
+        "issue": "missing-coverage",
+        "testType": "unit",
+        "progressTotal": 1,
+        "progressCompleted": 0,
+        "progressRemaining": 1
+      },
+      "guidance": {
+        "message": "A required test type has no recorded result.\n - Test type: unit\n - Recorded results for this type: <resultCount>\n\n The spec declares this test type as required for the ticket. No registered result\n satisfies it (either no run is recorded, or all recorded runs have allPassed=false\n without a passing retry).\n\n Possible reasons:\n - You haven't run the tests for this type yet\n - You ran the tests but did not register the result via record_test_result\n - All runs failed; you need to fix the failures and re-run, or justify the failure\n\n Recommended moves:\n 1. Run the test command(s) for unit (typically present in ticket.testSpecification.testCommands)\n 2. Register the outcome via record_test_result with the actual pass/fail/skip counts\n 3. If the tests cannot pass and the failures are intentional, attach add_failure_justification\n 4. If the tests must be skipped (e.g., environment unavailable), attach add_skip_justification",
+        "operations": [
+          "record_test_result",
+          "add_skip_justification"
+        ]
+      }
+    }
+  ],
+  "nextStep": {
+    "reason": "continue",
+    "action": "add-test-results",
+    "targets": [
+      {
+        "testType": "unit",
+        "testCommands": [
+          "npm test"
+        ]
+      }
+    ],
+    "progress": {
+      "total": 1,
+      "completed": 0,
+      "remaining": 1,
+      "remainingIds": [
+        "unit"
+      ]
+    },
+    "guidance": {
+      "message": "Test types pending recording (1 of 1):\n\n - unit (commands: npm test)\n\n The spec requires these test types. For each, run the corresponding command(s),\n register the outcome (pass/fail/skip counts), and attach justifications for any\n skipped or failing tests.\n\n Recommended moves:\n 1. Run the test command(s) for each pending type\n 2. For each run, register the outcome via record_test_result\n 3. If any tests are skipped, attach justifications via add_skip_justification\n 4. If any tests fail and the failures are acceptable, attach add_failure_justification",
+      "operations": [
+        "record_test_result",
+        "add_skip_justification",
+        "add_failure_justification"
+      ]
+    }
+  },
+  "summary": null,
+  "meta": {
+    "engineVersion": "0.1.0",
+    "configHash": "cfg-e5e5b8b6"
+  }
+}

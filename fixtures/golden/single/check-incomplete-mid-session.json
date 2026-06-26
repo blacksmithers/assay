@@ -1,0 +1,382 @@
+{
+  "passed": false,
+  "mode": "check",
+  "checks": {
+    "acceptanceCoverage": {
+      "checkType": "acceptance-coverage",
+      "passed": false,
+      "progress": {
+        "total": 2,
+        "completed": 0,
+        "remaining": 2,
+        "remainingIds": [
+          "AC-1",
+          "AC-2"
+        ],
+        "nextInOrderId": "AC-1"
+      },
+      "findings": [
+        {
+          "id": "334d645c8b29a4ff",
+          "checkType": "acceptance-coverage",
+          "severity": "error",
+          "message": "Acceptance criterion not verified: AC-1",
+          "primaryEntityId": "AC-1",
+          "entityIds": [
+            "T-1",
+            "AC-1"
+          ],
+          "context": {
+            "given": "g",
+            "when": "w",
+            "then": "t",
+            "order": 1,
+            "progressTotal": 2,
+            "progressCompleted": 0,
+            "progressRemaining": 2
+          },
+          "guidance": {
+            "message": "Acceptance criterion #1 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+            "operations": [
+              "mark_acceptance_check"
+            ]
+          }
+        },
+        {
+          "id": "fd6b37dc2925dad4",
+          "checkType": "acceptance-coverage",
+          "severity": "error",
+          "message": "Acceptance criterion not verified: AC-2",
+          "primaryEntityId": "AC-2",
+          "entityIds": [
+            "T-1",
+            "AC-2"
+          ],
+          "context": {
+            "given": "g",
+            "when": "w",
+            "then": "t",
+            "order": 2,
+            "progressTotal": 2,
+            "progressCompleted": 0,
+            "progressRemaining": 2
+          },
+          "guidance": {
+            "message": "Acceptance criterion #2 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+            "operations": [
+              "mark_acceptance_check"
+            ]
+          }
+        }
+      ]
+    },
+    "implementationCoverage": {
+      "checkType": "implementation-coverage",
+      "passed": false,
+      "progress": {
+        "total": 3,
+        "completed": 1,
+        "remaining": 2,
+        "remainingIds": [
+          "IS-2",
+          "IS-3"
+        ],
+        "nextInOrderId": "IS-2"
+      },
+      "findings": [
+        {
+          "id": "c018e6363463fefe",
+          "checkType": "implementation-coverage",
+          "severity": "error",
+          "message": "Implementation step not completed: IS-2",
+          "primaryEntityId": "IS-2",
+          "entityIds": [
+            "T-1",
+            "IS-2"
+          ],
+          "context": {
+            "text": "second",
+            "order": 2,
+            "progressTotal": 3,
+            "progressCompleted": 1,
+            "progressRemaining": 2
+          },
+          "guidance": {
+            "message": "Implementation step #2 not completed.\n - second\n\n Execute the step, then run mark_implementation_step_completion.",
+            "operations": [
+              "mark_implementation_step_completion"
+            ]
+          }
+        },
+        {
+          "id": "1f99b42803e92e1d",
+          "checkType": "implementation-coverage",
+          "severity": "error",
+          "message": "Implementation step not completed: IS-3",
+          "primaryEntityId": "IS-3",
+          "entityIds": [
+            "T-1",
+            "IS-3"
+          ],
+          "context": {
+            "text": "third",
+            "order": 3,
+            "progressTotal": 3,
+            "progressCompleted": 1,
+            "progressRemaining": 2
+          },
+          "guidance": {
+            "message": "Implementation step #3 not completed.\n - third\n\n Execute the step, then run mark_implementation_step_completion.",
+            "operations": [
+              "mark_implementation_step_completion"
+            ]
+          }
+        }
+      ]
+    },
+    "fileActionCoverage": {
+      "checkType": "file-action-coverage",
+      "passed": true,
+      "progress": {
+        "total": 2,
+        "completed": 0,
+        "remaining": 2,
+        "remainingIds": [
+          "a.ts",
+          "b.ts"
+        ]
+      },
+      "findings": [
+        {
+          "id": "fef8d68ae484a312",
+          "checkType": "file-action-coverage",
+          "severity": "warn",
+          "message": "Expected file change not recorded: a.ts",
+          "primaryEntityId": "a.ts",
+          "entityIds": [
+            "T-1",
+            "a.ts"
+          ],
+          "context": {
+            "expectedPath": "a.ts",
+            "expectedAction": "create",
+            "status": "missing",
+            "progressTotal": 2,
+            "progressCompleted": 0,
+            "progressRemaining": 2,
+            "isImplComplete": false,
+            "hasJustification": false
+          },
+          "guidance": {
+            "message": "Planned file not yet registered.\n - create: a.ts\n - Implementation still pending — likely auto-resolves\n\n No immediate action required.",
+            "operations": []
+          }
+        },
+        {
+          "id": "06bea23057594153",
+          "checkType": "file-action-coverage",
+          "severity": "warn",
+          "message": "Expected file change not recorded: b.ts",
+          "primaryEntityId": "b.ts",
+          "entityIds": [
+            "T-1",
+            "b.ts"
+          ],
+          "context": {
+            "expectedPath": "b.ts",
+            "expectedAction": "create",
+            "status": "missing",
+            "progressTotal": 2,
+            "progressCompleted": 0,
+            "progressRemaining": 2,
+            "isImplComplete": false,
+            "hasJustification": false
+          },
+          "guidance": {
+            "message": "Planned file not yet registered.\n - create: b.ts\n - Implementation still pending — likely auto-resolves\n\n No immediate action required.",
+            "operations": []
+          }
+        }
+      ]
+    },
+    "testResultPresence": {
+      "checkType": "test-result-presence",
+      "passed": true,
+      "progress": {
+        "total": 0,
+        "completed": 0,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    }
+  },
+  "findings": [
+    {
+      "id": "334d645c8b29a4ff",
+      "checkType": "acceptance-coverage",
+      "severity": "error",
+      "message": "Acceptance criterion not verified: AC-1",
+      "primaryEntityId": "AC-1",
+      "entityIds": [
+        "T-1",
+        "AC-1"
+      ],
+      "context": {
+        "given": "g",
+        "when": "w",
+        "then": "t",
+        "order": 1,
+        "progressTotal": 2,
+        "progressCompleted": 0,
+        "progressRemaining": 2
+      },
+      "guidance": {
+        "message": "Acceptance criterion #1 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+        "operations": [
+          "mark_acceptance_check"
+        ]
+      }
+    },
+    {
+      "id": "fd6b37dc2925dad4",
+      "checkType": "acceptance-coverage",
+      "severity": "error",
+      "message": "Acceptance criterion not verified: AC-2",
+      "primaryEntityId": "AC-2",
+      "entityIds": [
+        "T-1",
+        "AC-2"
+      ],
+      "context": {
+        "given": "g",
+        "when": "w",
+        "then": "t",
+        "order": 2,
+        "progressTotal": 2,
+        "progressCompleted": 0,
+        "progressRemaining": 2
+      },
+      "guidance": {
+        "message": "Acceptance criterion #2 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+        "operations": [
+          "mark_acceptance_check"
+        ]
+      }
+    },
+    {
+      "id": "fef8d68ae484a312",
+      "checkType": "file-action-coverage",
+      "severity": "warn",
+      "message": "Expected file change not recorded: a.ts",
+      "primaryEntityId": "a.ts",
+      "entityIds": [
+        "T-1",
+        "a.ts"
+      ],
+      "context": {
+        "expectedPath": "a.ts",
+        "expectedAction": "create",
+        "status": "missing",
+        "progressTotal": 2,
+        "progressCompleted": 0,
+        "progressRemaining": 2,
+        "isImplComplete": false,
+        "hasJustification": false
+      },
+      "guidance": {
+        "message": "Planned file not yet registered.\n - create: a.ts\n - Implementation still pending — likely auto-resolves\n\n No immediate action required.",
+        "operations": []
+      }
+    },
+    {
+      "id": "06bea23057594153",
+      "checkType": "file-action-coverage",
+      "severity": "warn",
+      "message": "Expected file change not recorded: b.ts",
+      "primaryEntityId": "b.ts",
+      "entityIds": [
+        "T-1",
+        "b.ts"
+      ],
+      "context": {
+        "expectedPath": "b.ts",
+        "expectedAction": "create",
+        "status": "missing",
+        "progressTotal": 2,
+        "progressCompleted": 0,
+        "progressRemaining": 2,
+        "isImplComplete": false,
+        "hasJustification": false
+      },
+      "guidance": {
+        "message": "Planned file not yet registered.\n - create: b.ts\n - Implementation still pending — likely auto-resolves\n\n No immediate action required.",
+        "operations": []
+      }
+    },
+    {
+      "id": "c018e6363463fefe",
+      "checkType": "implementation-coverage",
+      "severity": "error",
+      "message": "Implementation step not completed: IS-2",
+      "primaryEntityId": "IS-2",
+      "entityIds": [
+        "T-1",
+        "IS-2"
+      ],
+      "context": {
+        "text": "second",
+        "order": 2,
+        "progressTotal": 3,
+        "progressCompleted": 1,
+        "progressRemaining": 2
+      },
+      "guidance": {
+        "message": "Implementation step #2 not completed.\n - second\n\n Execute the step, then run mark_implementation_step_completion.",
+        "operations": [
+          "mark_implementation_step_completion"
+        ]
+      }
+    },
+    {
+      "id": "1f99b42803e92e1d",
+      "checkType": "implementation-coverage",
+      "severity": "error",
+      "message": "Implementation step not completed: IS-3",
+      "primaryEntityId": "IS-3",
+      "entityIds": [
+        "T-1",
+        "IS-3"
+      ],
+      "context": {
+        "text": "third",
+        "order": 3,
+        "progressTotal": 3,
+        "progressCompleted": 1,
+        "progressRemaining": 2
+      },
+      "guidance": {
+        "message": "Implementation step #3 not completed.\n - third\n\n Execute the step, then run mark_implementation_step_completion.",
+        "operations": [
+          "mark_implementation_step_completion"
+        ]
+      }
+    }
+  ],
+  "nextStep": null,
+  "summary": {
+    "message": "Ticket completion status:\n\n - check-imp-step: 2 pending\n - add-files-changes: 2 pending\n - check-ac: 2 pending\n\n Total pending: 6 items, 4 blocking issue(s).\n\n Start here:\n 1. check-imp-step: next step IS-2\n    Progress: 1/3\n\n 2. Switch to mode='action' with action='check-imp-step' for step-by-step guidance.\n\nEach issue has its own compact guidance in the findings list above.\n Switch to mode='action' for verbose remediation guidance on a specific issue.",
+    "pendingByAction": {
+      "check-imp-step": 2,
+      "add-test-results": 0,
+      "add-files-changes": 2,
+      "check-ac": 2
+    },
+    "totalPending": 6,
+    "blockingIssues": 4
+  },
+  "meta": {
+    "engineVersion": "0.1.0",
+    "configHash": "cfg-e5e5b8b6"
+  }
+}

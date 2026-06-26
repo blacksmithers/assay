@@ -1,0 +1,124 @@
+{
+  "passed": false,
+  "mode": "check",
+  "checks": {
+    "acceptanceCoverage": {
+      "checkType": "acceptance-coverage",
+      "passed": false,
+      "progress": {
+        "total": 1,
+        "completed": 0,
+        "remaining": 1,
+        "remainingIds": [
+          "AC-1"
+        ],
+        "nextInOrderId": "AC-1"
+      },
+      "findings": [
+        {
+          "id": "8fe4e798874d2e73",
+          "checkType": "acceptance-coverage",
+          "severity": "error",
+          "message": "Acceptance criterion not verified: AC-1",
+          "primaryEntityId": "AC-1",
+          "entityIds": [
+            "T-1",
+            "AC-1"
+          ],
+          "context": {
+            "given": "g",
+            "when": "w",
+            "then": "t",
+            "order": 1,
+            "progressTotal": 1,
+            "progressCompleted": 0,
+            "progressRemaining": 1
+          },
+          "guidance": {
+            "message": "Acceptance criterion #1 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+            "operations": [
+              "mark_acceptance_check"
+            ]
+          }
+        }
+      ]
+    },
+    "implementationCoverage": {
+      "checkType": "implementation-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "fileActionCoverage": {
+      "checkType": "file-action-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "testResultPresence": {
+      "checkType": "test-result-presence",
+      "passed": true,
+      "progress": {
+        "total": 0,
+        "completed": 0,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    }
+  },
+  "findings": [
+    {
+      "id": "8fe4e798874d2e73",
+      "checkType": "acceptance-coverage",
+      "severity": "error",
+      "message": "Acceptance criterion not verified: AC-1",
+      "primaryEntityId": "AC-1",
+      "entityIds": [
+        "T-1",
+        "AC-1"
+      ],
+      "context": {
+        "given": "g",
+        "when": "w",
+        "then": "t",
+        "order": 1,
+        "progressTotal": 1,
+        "progressCompleted": 0,
+        "progressRemaining": 1
+      },
+      "guidance": {
+        "message": "Acceptance criterion #1 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+        "operations": [
+          "mark_acceptance_check"
+        ]
+      }
+    }
+  ],
+  "nextStep": null,
+  "summary": {
+    "message": "Ticket completion status:\n\n - check-ac: 1 pending\n\n Total pending: 1 items, 1 blocking issue(s).\n\n Start here:\n 1. check-ac: next AC AC-1\n    Progress: 0/1\n\n 2. Switch to mode='action' with action='check-ac' for step-by-step guidance.\n\nEach issue has its own compact guidance in the findings list above.\n Switch to mode='action' for verbose remediation guidance on a specific issue.",
+    "pendingByAction": {
+      "check-imp-step": 0,
+      "add-test-results": 0,
+      "add-files-changes": 0,
+      "check-ac": 1
+    },
+    "totalPending": 1,
+    "blockingIssues": 1
+  },
+  "meta": {
+    "engineVersion": "0.1.0",
+    "configHash": "cfg-e5e5b8b6"
+  }
+}

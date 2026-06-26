@@ -1,0 +1,133 @@
+{
+  "passed": false,
+  "mode": "action",
+  "checks": {
+    "acceptanceCoverage": {
+      "checkType": "acceptance-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "implementationCoverage": {
+      "checkType": "implementation-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "fileActionCoverage": {
+      "checkType": "file-action-coverage",
+      "passed": false,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": [
+        {
+          "id": "dc5902cc4c1f1c93",
+          "checkType": "file-action-coverage",
+          "severity": "error",
+          "message": "Data integrity: file change has no matching declared expectation: b.ts",
+          "primaryEntityId": "fc-orphan",
+          "entityIds": [
+            "T-1",
+            "fc-orphan"
+          ],
+          "context": {
+            "issue": "data-integrity",
+            "expectedPath": "b.ts",
+            "expectedAction": "create",
+            "status": "missing"
+          },
+          "guidance": {
+            "message": "Data integrity error: file change recorded but not declared, and not tagged 'extra'.\n - Path: b.ts\n - Recorded action: <actualAction>\n\n The ingestion layer should tag any FileChange with no matching declared entry\n as status='extra'. This entry has neither a declared match nor the 'extra' tag,\n indicating a bug in the ingestion / operations layer.\n\n This is NOT something the agent can fix. The work session is currently blocked\n by a system inconsistency.\n\n Recommended moves:\n 1. Surface this finding to the operations / lifecycle maintainer\n 2. Continue with other pending items in this work session if any are unblocked",
+            "operations": []
+          }
+        }
+      ]
+    },
+    "testResultPresence": {
+      "checkType": "test-result-presence",
+      "passed": true,
+      "progress": {
+        "total": 0,
+        "completed": 0,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    }
+  },
+  "findings": [
+    {
+      "id": "dc5902cc4c1f1c93",
+      "checkType": "file-action-coverage",
+      "severity": "error",
+      "message": "Data integrity: file change has no matching declared expectation: b.ts",
+      "primaryEntityId": "fc-orphan",
+      "entityIds": [
+        "T-1",
+        "fc-orphan"
+      ],
+      "context": {
+        "issue": "data-integrity",
+        "expectedPath": "b.ts",
+        "expectedAction": "create",
+        "status": "missing"
+      },
+      "guidance": {
+        "message": "Data integrity error: file change recorded but not declared, and not tagged 'extra'.\n - Path: b.ts\n - Recorded action: <actualAction>\n\n The ingestion layer should tag any FileChange with no matching declared entry\n as status='extra'. This entry has neither a declared match nor the 'extra' tag,\n indicating a bug in the ingestion / operations layer.\n\n This is NOT something the agent can fix. The work session is currently blocked\n by a system inconsistency.\n\n Recommended moves:\n 1. Surface this finding to the operations / lifecycle maintainer\n 2. Continue with other pending items in this work session if any are unblocked",
+        "operations": []
+      }
+    }
+  ],
+  "nextStep": {
+    "reason": "resolve",
+    "action": "add-files-changes",
+    "issues": [
+      {
+        "fileChange": {
+          "id": "fc-orphan",
+          "workSessionId": "ws-1",
+          "ticketId": "T-1",
+          "projectId": "p-1",
+          "expectedPath": "b.ts",
+          "expectedAction": "create",
+          "status": "missing",
+          "justificationApproved": "pending",
+          "recordedAt": "2026-01-02T00:00:00.000Z"
+        },
+        "issue": "missing-without-justification"
+      }
+    ],
+    "progress": {
+      "total": 1,
+      "completed": 1,
+      "remaining": 0,
+      "remainingIds": []
+    },
+    "guidance": {
+      "message": "File change issues require resolution before adding new entries.\n - Open issues: 1\n\n - b.ts (missing without justification): register via record_file_change or attach add_file_change_justification\n\n Issues take priority over registering new file actions — assayforge prevents\n progress until each open issue is resolved. Address them in the order shown.\n\n Recommended moves:\n 1. Resolve the first issue per its specific guidance (operations vary by issue type)\n 2. Continue down the list; each resolution may surface the next pending action",
+      "operations": [
+        "record_file_change",
+        "add_file_change_justification"
+      ]
+    }
+  },
+  "summary": null,
+  "meta": {
+    "engineVersion": "0.1.0",
+    "configHash": "cfg-e5e5b8b6"
+  }
+}

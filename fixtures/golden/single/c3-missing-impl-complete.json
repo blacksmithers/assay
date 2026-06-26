@@ -1,0 +1,141 @@
+{
+  "passed": false,
+  "mode": "action",
+  "checks": {
+    "acceptanceCoverage": {
+      "checkType": "acceptance-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "implementationCoverage": {
+      "checkType": "implementation-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "fileActionCoverage": {
+      "checkType": "file-action-coverage",
+      "passed": false,
+      "progress": {
+        "total": 1,
+        "completed": 0,
+        "remaining": 1,
+        "remainingIds": [
+          "a.ts"
+        ]
+      },
+      "findings": [
+        {
+          "id": "ab7abd8982522930",
+          "checkType": "file-action-coverage",
+          "severity": "error",
+          "message": "Expected file change not recorded: a.ts",
+          "primaryEntityId": "a.ts",
+          "entityIds": [
+            "T-1",
+            "a.ts"
+          ],
+          "context": {
+            "expectedPath": "a.ts",
+            "expectedAction": "create",
+            "status": "missing",
+            "progressTotal": 1,
+            "progressCompleted": 0,
+            "progressRemaining": 1,
+            "isImplComplete": true,
+            "hasJustification": false
+          },
+          "guidance": {
+            "message": "A planned file action is missing.\n - Path: a.ts\n - Expected action: create\n - Implementation steps: complete\n\n Implementation is fully recorded as done, so this gap is unlikely to resolve\n automatically. Either you have not registered the file change yet, or the\n file action was not executed.\n\n Possible reasons:\n - You executed the action but did not register it via record_file_change\n - The file was intentionally not touched (consider attaching a justification)\n - The spec is wrong about this file (consider reopening planning to remove it)\n\n Recommended moves:\n 1. Run `git status` and `git diff` to confirm the local state of a.ts\n 2. If the file matches the expected action, register it via record_file_change with the matching actualAction (and optional commitHash for lifecycle validation)\n 3. If the file was deliberately skipped, attach a reason via add_file_change_justification\n 4. If the spec is wrong, reopen the planning session and adjust the filesToBe* lists",
+            "operations": [
+              "record_file_change",
+              "add_file_change_justification"
+            ]
+          }
+        }
+      ]
+    },
+    "testResultPresence": {
+      "checkType": "test-result-presence",
+      "passed": true,
+      "progress": {
+        "total": 0,
+        "completed": 0,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    }
+  },
+  "findings": [
+    {
+      "id": "ab7abd8982522930",
+      "checkType": "file-action-coverage",
+      "severity": "error",
+      "message": "Expected file change not recorded: a.ts",
+      "primaryEntityId": "a.ts",
+      "entityIds": [
+        "T-1",
+        "a.ts"
+      ],
+      "context": {
+        "expectedPath": "a.ts",
+        "expectedAction": "create",
+        "status": "missing",
+        "progressTotal": 1,
+        "progressCompleted": 0,
+        "progressRemaining": 1,
+        "isImplComplete": true,
+        "hasJustification": false
+      },
+      "guidance": {
+        "message": "A planned file action is missing.\n - Path: a.ts\n - Expected action: create\n - Implementation steps: complete\n\n Implementation is fully recorded as done, so this gap is unlikely to resolve\n automatically. Either you have not registered the file change yet, or the\n file action was not executed.\n\n Possible reasons:\n - You executed the action but did not register it via record_file_change\n - The file was intentionally not touched (consider attaching a justification)\n - The spec is wrong about this file (consider reopening planning to remove it)\n\n Recommended moves:\n 1. Run `git status` and `git diff` to confirm the local state of a.ts\n 2. If the file matches the expected action, register it via record_file_change with the matching actualAction (and optional commitHash for lifecycle validation)\n 3. If the file was deliberately skipped, attach a reason via add_file_change_justification\n 4. If the spec is wrong, reopen the planning session and adjust the filesToBe* lists",
+        "operations": [
+          "record_file_change",
+          "add_file_change_justification"
+        ]
+      }
+    }
+  ],
+  "nextStep": {
+    "reason": "continue",
+    "action": "add-files-changes",
+    "targets": [
+      {
+        "expectedPath": "a.ts",
+        "expectedAction": "create"
+      }
+    ],
+    "progress": {
+      "total": 1,
+      "completed": 0,
+      "remaining": 1,
+      "remainingIds": [
+        "a.ts"
+      ]
+    },
+    "guidance": {
+      "message": "File actions pending registration (1 of 1):\n\n - create: a.ts\n\n The spec lists these file paths and actions; you need to register what\n actually happened during implementation. Each entry needs an actualAction\n (created/modified/deleted/referenced/absent) and a status (matched if it went\n as planned, mismatched/missing/extra otherwise).\n\n Recommended moves:\n 1. Run `git status` and `git log` to verify what changed\n 2. For each entry above, run record_file_change with the actualAction, status, and optional commitHash\n 3. If any registration diverges from the planned action, attach add_file_change_justification explaining why",
+      "operations": [
+        "record_file_change",
+        "add_file_change_justification"
+      ]
+    }
+  },
+  "summary": null,
+  "meta": {
+    "engineVersion": "0.1.0",
+    "configHash": "cfg-e5e5b8b6"
+  }
+}

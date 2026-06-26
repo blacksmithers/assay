@@ -1,0 +1,416 @@
+{
+  "passed": false,
+  "mode": "action",
+  "checks": {
+    "acceptanceCoverage": {
+      "checkType": "acceptance-coverage",
+      "passed": false,
+      "progress": {
+        "total": 3,
+        "completed": 0,
+        "remaining": 3,
+        "remainingIds": [
+          "AC-1",
+          "AC-2",
+          "AC-3"
+        ],
+        "nextInOrderId": "AC-1"
+      },
+      "findings": [
+        {
+          "id": "bb499b2b8c9bef65",
+          "checkType": "acceptance-coverage",
+          "severity": "error",
+          "message": "Acceptance criterion not verified: AC-1",
+          "primaryEntityId": "AC-1",
+          "entityIds": [
+            "T-verif",
+            "AC-1"
+          ],
+          "context": {
+            "given": "unit suite",
+            "when": "pnpm test runs",
+            "then": "all unit tests pass",
+            "order": 1,
+            "progressTotal": 3,
+            "progressCompleted": 0,
+            "progressRemaining": 3
+          },
+          "guidance": {
+            "message": "Acceptance criterion #1 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+            "operations": [
+              "mark_acceptance_check"
+            ]
+          }
+        },
+        {
+          "id": "cc63bd3083e7e8e8",
+          "checkType": "acceptance-coverage",
+          "severity": "error",
+          "message": "Acceptance criterion not verified: AC-2",
+          "primaryEntityId": "AC-2",
+          "entityIds": [
+            "T-verif",
+            "AC-2"
+          ],
+          "context": {
+            "given": "e2e suite",
+            "when": "playwright runs",
+            "then": "critical paths pass",
+            "order": 2,
+            "progressTotal": 3,
+            "progressCompleted": 0,
+            "progressRemaining": 3
+          },
+          "guidance": {
+            "message": "Acceptance criterion #2 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+            "operations": [
+              "mark_acceptance_check"
+            ]
+          }
+        },
+        {
+          "id": "f31f152d1a9609e3",
+          "checkType": "acceptance-coverage",
+          "severity": "error",
+          "message": "Acceptance criterion not verified: AC-3",
+          "primaryEntityId": "AC-3",
+          "entityIds": [
+            "T-verif",
+            "AC-3"
+          ],
+          "context": {
+            "given": "reviewer reads doc",
+            "when": "verification doc exists",
+            "then": "sign-off recorded",
+            "order": 3,
+            "progressTotal": 3,
+            "progressCompleted": 0,
+            "progressRemaining": 3
+          },
+          "guidance": {
+            "message": "Acceptance criterion #3 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+            "operations": [
+              "mark_acceptance_check"
+            ]
+          }
+        }
+      ]
+    },
+    "implementationCoverage": {
+      "checkType": "implementation-coverage",
+      "passed": true,
+      "progress": {
+        "total": 0,
+        "completed": 0,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "fileActionCoverage": {
+      "checkType": "file-action-coverage",
+      "passed": false,
+      "progress": {
+        "total": 1,
+        "completed": 0,
+        "remaining": 1,
+        "remainingIds": [
+          "docs/oauth-verification.md"
+        ]
+      },
+      "findings": [
+        {
+          "id": "39d69ceca2992c04",
+          "checkType": "file-action-coverage",
+          "severity": "error",
+          "message": "Expected file change not recorded: docs/oauth-verification.md",
+          "primaryEntityId": "docs/oauth-verification.md",
+          "entityIds": [
+            "T-verif",
+            "docs/oauth-verification.md"
+          ],
+          "context": {
+            "expectedPath": "docs/oauth-verification.md",
+            "expectedAction": "reference",
+            "status": "missing",
+            "progressTotal": 1,
+            "progressCompleted": 0,
+            "progressRemaining": 1,
+            "isImplComplete": true,
+            "hasJustification": false
+          },
+          "guidance": {
+            "message": "Planned file not registered (impl complete).\n - reference: docs/oauth-verification.md\n\n Register via record_file_change or attach add_file_change_justification.",
+            "operations": [
+              "record_file_change",
+              "add_file_change_justification"
+            ]
+          }
+        }
+      ]
+    },
+    "testResultPresence": {
+      "checkType": "test-result-presence",
+      "passed": false,
+      "progress": {
+        "total": 2,
+        "completed": 2,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": [
+        {
+          "id": "db33b726d81a1548",
+          "checkType": "test-result-presence",
+          "severity": "error",
+          "message": "Tests skipped without justification: e2e",
+          "primaryEntityId": "tr-e2e-skipped",
+          "entityIds": [
+            "T-verif",
+            "tr-e2e-skipped"
+          ],
+          "context": {
+            "issue": "skipped-without-justification",
+            "testType": "e2e",
+            "skipped": 3,
+            "command": "pnpm test:e2e"
+          },
+          "guidance": {
+            "message": "Tests were skipped without a justification.\n - Test type: e2e\n - Skipped: 3 of <total>\n\n A test result was registered with skipped tests, but no justification entries\n were provided to explain why those tests were not executed. Skips without\n justification block work session completion — the spec assumes every relevant\n test ran, and skips need a reason.\n\n Possible reasons:\n - The tests were skipped due to environment limitations (e.g., flaky, requires deps)\n - The tests are obsolete and should be removed (consider reopening planning)\n - The skip was unintentional (the test runner skipped them without your awareness)\n\n Recommended moves:\n 1. Inspect why the tests were skipped (test runner output, suite metadata)\n 2. If the skips are legitimate, attach one justification entry per skipped test via add_skip_justification\n 3. If the skips were unintentional, fix the test config and re-run; record the new result via record_test_result\n 4. If the tests are obsolete, reopen the planning session to remove them from the test specification",
+            "operations": [
+              "record_test_result",
+              "add_skip_justification"
+            ]
+          }
+        },
+        {
+          "id": "11905ce0ee4ae8ea",
+          "checkType": "test-result-presence",
+          "severity": "error",
+          "message": "Tests failing: unit",
+          "primaryEntityId": "tr-unit-failing",
+          "entityIds": [
+            "T-verif",
+            "tr-unit-failing"
+          ],
+          "context": {
+            "issue": "tests-failing",
+            "testType": "unit",
+            "failed": 2,
+            "passed": 18,
+            "total": 20,
+            "command": "pnpm test"
+          },
+          "guidance": {
+            "message": "Tests failing without justification.\n - unit: 2/20 failed\n\n Fix and re-run (auto-supersedes), OR justify via add_failure_justification.",
+            "operations": [
+              "record_test_result",
+              "add_failure_justification"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "findings": [
+    {
+      "id": "bb499b2b8c9bef65",
+      "checkType": "acceptance-coverage",
+      "severity": "error",
+      "message": "Acceptance criterion not verified: AC-1",
+      "primaryEntityId": "AC-1",
+      "entityIds": [
+        "T-verif",
+        "AC-1"
+      ],
+      "context": {
+        "given": "unit suite",
+        "when": "pnpm test runs",
+        "then": "all unit tests pass",
+        "order": 1,
+        "progressTotal": 3,
+        "progressCompleted": 0,
+        "progressRemaining": 3
+      },
+      "guidance": {
+        "message": "Acceptance criterion #1 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+        "operations": [
+          "mark_acceptance_check"
+        ]
+      }
+    },
+    {
+      "id": "cc63bd3083e7e8e8",
+      "checkType": "acceptance-coverage",
+      "severity": "error",
+      "message": "Acceptance criterion not verified: AC-2",
+      "primaryEntityId": "AC-2",
+      "entityIds": [
+        "T-verif",
+        "AC-2"
+      ],
+      "context": {
+        "given": "e2e suite",
+        "when": "playwright runs",
+        "then": "critical paths pass",
+        "order": 2,
+        "progressTotal": 3,
+        "progressCompleted": 0,
+        "progressRemaining": 3
+      },
+      "guidance": {
+        "message": "Acceptance criterion #2 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+        "operations": [
+          "mark_acceptance_check"
+        ]
+      }
+    },
+    {
+      "id": "f31f152d1a9609e3",
+      "checkType": "acceptance-coverage",
+      "severity": "error",
+      "message": "Acceptance criterion not verified: AC-3",
+      "primaryEntityId": "AC-3",
+      "entityIds": [
+        "T-verif",
+        "AC-3"
+      ],
+      "context": {
+        "given": "reviewer reads doc",
+        "when": "verification doc exists",
+        "then": "sign-off recorded",
+        "order": 3,
+        "progressTotal": 3,
+        "progressCompleted": 0,
+        "progressRemaining": 3
+      },
+      "guidance": {
+        "message": "Acceptance criterion #3 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+        "operations": [
+          "mark_acceptance_check"
+        ]
+      }
+    },
+    {
+      "id": "39d69ceca2992c04",
+      "checkType": "file-action-coverage",
+      "severity": "error",
+      "message": "Expected file change not recorded: docs/oauth-verification.md",
+      "primaryEntityId": "docs/oauth-verification.md",
+      "entityIds": [
+        "T-verif",
+        "docs/oauth-verification.md"
+      ],
+      "context": {
+        "expectedPath": "docs/oauth-verification.md",
+        "expectedAction": "reference",
+        "status": "missing",
+        "progressTotal": 1,
+        "progressCompleted": 0,
+        "progressRemaining": 1,
+        "isImplComplete": true,
+        "hasJustification": false
+      },
+      "guidance": {
+        "message": "Planned file not registered (impl complete).\n - reference: docs/oauth-verification.md\n\n Register via record_file_change or attach add_file_change_justification.",
+        "operations": [
+          "record_file_change",
+          "add_file_change_justification"
+        ]
+      }
+    },
+    {
+      "id": "db33b726d81a1548",
+      "checkType": "test-result-presence",
+      "severity": "error",
+      "message": "Tests skipped without justification: e2e",
+      "primaryEntityId": "tr-e2e-skipped",
+      "entityIds": [
+        "T-verif",
+        "tr-e2e-skipped"
+      ],
+      "context": {
+        "issue": "skipped-without-justification",
+        "testType": "e2e",
+        "skipped": 3,
+        "command": "pnpm test:e2e"
+      },
+      "guidance": {
+        "message": "Tests were skipped without a justification.\n - Test type: e2e\n - Skipped: 3 of <total>\n\n A test result was registered with skipped tests, but no justification entries\n were provided to explain why those tests were not executed. Skips without\n justification block work session completion — the spec assumes every relevant\n test ran, and skips need a reason.\n\n Possible reasons:\n - The tests were skipped due to environment limitations (e.g., flaky, requires deps)\n - The tests are obsolete and should be removed (consider reopening planning)\n - The skip was unintentional (the test runner skipped them without your awareness)\n\n Recommended moves:\n 1. Inspect why the tests were skipped (test runner output, suite metadata)\n 2. If the skips are legitimate, attach one justification entry per skipped test via add_skip_justification\n 3. If the skips were unintentional, fix the test config and re-run; record the new result via record_test_result\n 4. If the tests are obsolete, reopen the planning session to remove them from the test specification",
+        "operations": [
+          "record_test_result",
+          "add_skip_justification"
+        ]
+      }
+    },
+    {
+      "id": "11905ce0ee4ae8ea",
+      "checkType": "test-result-presence",
+      "severity": "error",
+      "message": "Tests failing: unit",
+      "primaryEntityId": "tr-unit-failing",
+      "entityIds": [
+        "T-verif",
+        "tr-unit-failing"
+      ],
+      "context": {
+        "issue": "tests-failing",
+        "testType": "unit",
+        "failed": 2,
+        "passed": 18,
+        "total": 20,
+        "command": "pnpm test"
+      },
+      "guidance": {
+        "message": "Tests failing without justification.\n - unit: 2/20 failed\n\n Fix and re-run (auto-supersedes), OR justify via add_failure_justification.",
+        "operations": [
+          "record_test_result",
+          "add_failure_justification"
+        ]
+      }
+    }
+  ],
+  "nextStep": {
+    "reason": "resolve",
+    "action": "add-test-results",
+    "issues": [
+      {
+        "testResult": {
+          "id": "tr-e2e-skipped",
+          "workSessionId": "ws-2",
+          "projectId": "p-1",
+          "testType": "e2e",
+          "passed": 7,
+          "failed": 0,
+          "skipped": 3,
+          "total": 10,
+          "allPassed": true,
+          "command": "pnpm test:e2e",
+          "skippedJustifications": [],
+          "failureJustifications": [],
+          "runAt": "2026-01-02T00:30:00.000Z"
+        },
+        "issue": "skipped-without-justification"
+      }
+    ],
+    "progress": {
+      "total": 2,
+      "completed": 2,
+      "remaining": 0,
+      "remainingIds": []
+    },
+    "guidance": {
+      "message": "Test result issues require resolution before adding new entries.\n - Open issues: 1\n\n - e2e (skipped without justification): attach via add_skip_justification\n\n Issues take priority over registering new test types. Note: a later passing\n run for the same (testType, command) supersedes any older failing run for that\n pair, so re-running and recording a new result may auto-resolve some issues.\n\n Recommended moves:\n 1. Resolve the first issue per its specific guidance\n 2. For tests-failing issues, fixing and re-running with record_test_result auto-supersedes\n 3. For skip/failure justifications, attach via add_skip_justification or add_failure_justification",
+      "operations": [
+        "record_test_result",
+        "add_skip_justification"
+      ]
+    }
+  },
+  "summary": null,
+  "meta": {
+    "engineVersion": "0.1.0",
+    "configHash": "cfg-e5e5b8b6"
+  }
+}

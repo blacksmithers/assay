@@ -1,0 +1,186 @@
+{
+  "passed": false,
+  "mode": "action",
+  "checks": {
+    "acceptanceCoverage": {
+      "checkType": "acceptance-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "implementationCoverage": {
+      "checkType": "implementation-coverage",
+      "passed": false,
+      "progress": {
+        "total": 1,
+        "completed": 0,
+        "remaining": 1,
+        "remainingIds": [
+          "IS-1"
+        ],
+        "nextInOrderId": "IS-1"
+      },
+      "findings": [
+        {
+          "id": "ec59072b7253961b",
+          "checkType": "implementation-coverage",
+          "severity": "error",
+          "message": "Implementation step not completed: IS-1",
+          "primaryEntityId": "IS-1",
+          "entityIds": [
+            "T-1",
+            "IS-1"
+          ],
+          "context": {
+            "text": "Do the thing",
+            "order": 1,
+            "progressTotal": 1,
+            "progressCompleted": 0,
+            "progressRemaining": 1
+          },
+          "guidance": {
+            "message": "Implementation step has not been completed yet.\n - Position: 1 of 1\n - Progress: 0 done, 1 remaining\n - Description: Do the thing\n\n Implementation steps are the spec's instructions for what to build.\n Each step must be marked done before the work session can complete.\n\n Possible reasons this is pending:\n - You completed the work but have not registered the completion\n - You haven't started the work for this step\n - The step is no longer relevant given decisions made during implementation\n\n Recommended moves:\n 1. Execute the step as described\n 2. Run mark_implementation_step_completion with done=true once completed\n 3. If the step is no longer required, reopen the planning session to remove it",
+            "operations": [
+              "mark_implementation_step_completion"
+            ]
+          }
+        }
+      ]
+    },
+    "fileActionCoverage": {
+      "checkType": "file-action-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 0,
+        "remaining": 1,
+        "remainingIds": [
+          "a.ts"
+        ]
+      },
+      "findings": [
+        {
+          "id": "5d9e3df16f9b9c06",
+          "checkType": "file-action-coverage",
+          "severity": "warn",
+          "message": "Expected file change not recorded: a.ts",
+          "primaryEntityId": "a.ts",
+          "entityIds": [
+            "T-1",
+            "a.ts"
+          ],
+          "context": {
+            "expectedPath": "a.ts",
+            "expectedAction": "create",
+            "status": "missing",
+            "progressTotal": 1,
+            "progressCompleted": 0,
+            "progressRemaining": 1,
+            "isImplComplete": false,
+            "hasJustification": false
+          },
+          "guidance": {
+            "message": "Planned file not yet registered.\n - create: a.ts\n - Implementation still pending — likely auto-resolves\n\n No immediate action required.",
+            "operations": []
+          }
+        }
+      ]
+    },
+    "testResultPresence": {
+      "checkType": "test-result-presence",
+      "passed": true,
+      "progress": {
+        "total": 0,
+        "completed": 0,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    }
+  },
+  "findings": [
+    {
+      "id": "5d9e3df16f9b9c06",
+      "checkType": "file-action-coverage",
+      "severity": "warn",
+      "message": "Expected file change not recorded: a.ts",
+      "primaryEntityId": "a.ts",
+      "entityIds": [
+        "T-1",
+        "a.ts"
+      ],
+      "context": {
+        "expectedPath": "a.ts",
+        "expectedAction": "create",
+        "status": "missing",
+        "progressTotal": 1,
+        "progressCompleted": 0,
+        "progressRemaining": 1,
+        "isImplComplete": false,
+        "hasJustification": false
+      },
+      "guidance": {
+        "message": "Planned file not yet registered.\n - create: a.ts\n - Implementation still pending — likely auto-resolves\n\n No immediate action required.",
+        "operations": []
+      }
+    },
+    {
+      "id": "ec59072b7253961b",
+      "checkType": "implementation-coverage",
+      "severity": "error",
+      "message": "Implementation step not completed: IS-1",
+      "primaryEntityId": "IS-1",
+      "entityIds": [
+        "T-1",
+        "IS-1"
+      ],
+      "context": {
+        "text": "Do the thing",
+        "order": 1,
+        "progressTotal": 1,
+        "progressCompleted": 0,
+        "progressRemaining": 1
+      },
+      "guidance": {
+        "message": "Implementation step has not been completed yet.\n - Position: 1 of 1\n - Progress: 0 done, 1 remaining\n - Description: Do the thing\n\n Implementation steps are the spec's instructions for what to build.\n Each step must be marked done before the work session can complete.\n\n Possible reasons this is pending:\n - You completed the work but have not registered the completion\n - You haven't started the work for this step\n - The step is no longer relevant given decisions made during implementation\n\n Recommended moves:\n 1. Execute the step as described\n 2. Run mark_implementation_step_completion with done=true once completed\n 3. If the step is no longer required, reopen the planning session to remove it",
+        "operations": [
+          "mark_implementation_step_completion"
+        ]
+      }
+    }
+  ],
+  "nextStep": {
+    "reason": "prerequisite",
+    "action": "check-imp-step",
+    "implStep": {
+      "id": "IS-1",
+      "text": "Do the thing",
+      "order": 1
+    },
+    "progress": {
+      "total": 1,
+      "completed": 0,
+      "remaining": 1,
+      "remainingIds": [
+        "IS-1"
+      ],
+      "nextInOrderId": "IS-1"
+    },
+    "guidance": {
+      "message": "Earlier action 'check-imp-step' has pending work.\n - Requested action: add-files-changes\n - Next pending step: #1 — Do the thing\n - Implementation progress: 0/1 done\n\n The canonical sequence puts implementation steps before add-files-changes,\n because completed implementation usually resolves later actions naturally\n (e.g., file changes fall out of implementation work).\n\n Recommended moves:\n 1. Execute the pending step as described\n 2. Run mark_implementation_step_completion with done=true\n 3. You may proceed with add-files-changes if you have a strong reason to override the sequence — but the work session will not pass until prerequisites are addressed",
+      "operations": [
+        "mark_implementation_step_completion"
+      ]
+    }
+  },
+  "summary": null,
+  "meta": {
+    "engineVersion": "0.1.0",
+    "configHash": "cfg-e5e5b8b6"
+  }
+}

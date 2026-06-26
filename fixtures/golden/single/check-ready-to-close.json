@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "mode": "check",
+  "checks": {
+    "acceptanceCoverage": {
+      "checkType": "acceptance-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "implementationCoverage": {
+      "checkType": "implementation-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "fileActionCoverage": {
+      "checkType": "file-action-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "testResultPresence": {
+      "checkType": "test-result-presence",
+      "passed": true,
+      "progress": {
+        "total": 0,
+        "completed": 0,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    }
+  },
+  "findings": [],
+  "nextStep": null,
+  "summary": {
+    "message": "Ticket completion status:\n\n - (no actions applicable)\n\n Total pending: 0 items, 0 blocking issue(s).\n\n Start here:\n The work session is ready for closure. Invoke complete_work_session.\n\nAll applicable actions are complete and no blocking issues remain.\n Invoke complete_work_session to close the work session.",
+    "pendingByAction": {
+      "check-imp-step": 0,
+      "add-test-results": 0,
+      "add-files-changes": 0,
+      "check-ac": 0
+    },
+    "totalPending": 0,
+    "blockingIssues": 0
+  },
+  "meta": {
+    "engineVersion": "0.1.0",
+    "configHash": "cfg-e5e5b8b6"
+  }
+}

@@ -1,0 +1,319 @@
+{
+  "passed": false,
+  "mode": "action",
+  "checks": {
+    "acceptanceCoverage": {
+      "checkType": "acceptance-coverage",
+      "passed": false,
+      "progress": {
+        "total": 3,
+        "completed": 0,
+        "remaining": 3,
+        "remainingIds": [
+          "AC-1",
+          "AC-2",
+          "AC-3"
+        ],
+        "nextInOrderId": "AC-1"
+      },
+      "findings": [
+        {
+          "id": "677f4d1103455a86",
+          "checkType": "acceptance-coverage",
+          "severity": "error",
+          "message": "Acceptance criterion not verified: AC-1",
+          "primaryEntityId": "AC-1",
+          "entityIds": [
+            "T-impl",
+            "AC-1"
+          ],
+          "context": {
+            "given": "OAuth provider replies",
+            "when": "callback hits /auth/callback",
+            "then": "session token persists",
+            "order": 1,
+            "progressTotal": 3,
+            "progressCompleted": 0,
+            "progressRemaining": 3
+          },
+          "guidance": {
+            "message": "Acceptance criterion #1 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+            "operations": [
+              "mark_acceptance_check"
+            ]
+          }
+        },
+        {
+          "id": "2036f94b6c6c982b",
+          "checkType": "acceptance-coverage",
+          "severity": "error",
+          "message": "Acceptance criterion not verified: AC-2",
+          "primaryEntityId": "AC-2",
+          "entityIds": [
+            "T-impl",
+            "AC-2"
+          ],
+          "context": {
+            "given": "token expires",
+            "when": "refresh request made",
+            "then": "new token issued",
+            "order": 2,
+            "progressTotal": 3,
+            "progressCompleted": 0,
+            "progressRemaining": 3
+          },
+          "guidance": {
+            "message": "Acceptance criterion #2 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+            "operations": [
+              "mark_acceptance_check"
+            ]
+          }
+        },
+        {
+          "id": "63af8f7eb38e0272",
+          "checkType": "acceptance-coverage",
+          "severity": "error",
+          "message": "Acceptance criterion not verified: AC-3",
+          "primaryEntityId": "AC-3",
+          "entityIds": [
+            "T-impl",
+            "AC-3"
+          ],
+          "context": {
+            "given": "user logs out",
+            "when": "session ends",
+            "then": "tokens revoked",
+            "order": 3,
+            "progressTotal": 3,
+            "progressCompleted": 0,
+            "progressRemaining": 3
+          },
+          "guidance": {
+            "message": "Acceptance criterion #3 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+            "operations": [
+              "mark_acceptance_check"
+            ]
+          }
+        }
+      ]
+    },
+    "implementationCoverage": {
+      "checkType": "implementation-coverage",
+      "passed": true,
+      "progress": {
+        "total": 4,
+        "completed": 4,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "fileActionCoverage": {
+      "checkType": "file-action-coverage",
+      "passed": false,
+      "progress": {
+        "total": 4,
+        "completed": 3,
+        "remaining": 1,
+        "remainingIds": [
+          "src/auth/helpers.ts"
+        ]
+      },
+      "findings": [
+        {
+          "id": "3dfcec6605b942cf",
+          "checkType": "file-action-coverage",
+          "severity": "error",
+          "message": "Unexpected file change recorded: src/auth/helpers.ts",
+          "primaryEntityId": "fc-extra-helper",
+          "entityIds": [
+            "T-impl",
+            "src/auth/helpers.ts",
+            "fc-extra-helper"
+          ],
+          "context": {
+            "expectedPath": "src/auth/helpers.ts",
+            "expectedAction": "create",
+            "status": "extra",
+            "progressTotal": 4,
+            "progressCompleted": 3,
+            "progressRemaining": 1,
+            "isImplComplete": true,
+            "fileChangeId": "fc-extra-helper",
+            "actualAction": "created",
+            "hasJustification": false,
+            "justificationApproved": "pending"
+          },
+          "guidance": {
+            "message": "A file was touched without being declared in the spec.\n - Path: src/auth/helpers.ts\n - Recorded action: created\n\n The spec does not list this file in any filesToBe* group, but the agent\n registered a change for it. Untracked file changes erode planning fidelity\n and should be either declared or justified.\n\n Possible reasons:\n - The file is genuinely necessary for the work but was missed during planning\n - The file is incidental (e.g., generated artifact, lockfile update) and warrants justification\n - The recording was mistaken (the file should not appear at all)\n\n Recommended moves:\n 1. Decide whether the change is essential to the ticket or peripheral\n 2. If essential, reopen the planning session to add the file to the appropriate filesToBe* list\n 3. If peripheral but legitimate, attach add_file_change_justification explaining why\n 4. If the recording was wrong, the operations layer rejects deletes — contact lifecycle to clean up",
+            "operations": [
+              "add_file_change_justification"
+            ]
+          }
+        }
+      ]
+    },
+    "testResultPresence": {
+      "checkType": "test-result-presence",
+      "passed": true,
+      "progress": {
+        "total": 0,
+        "completed": 0,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    }
+  },
+  "findings": [
+    {
+      "id": "677f4d1103455a86",
+      "checkType": "acceptance-coverage",
+      "severity": "error",
+      "message": "Acceptance criterion not verified: AC-1",
+      "primaryEntityId": "AC-1",
+      "entityIds": [
+        "T-impl",
+        "AC-1"
+      ],
+      "context": {
+        "given": "OAuth provider replies",
+        "when": "callback hits /auth/callback",
+        "then": "session token persists",
+        "order": 1,
+        "progressTotal": 3,
+        "progressCompleted": 0,
+        "progressRemaining": 3
+      },
+      "guidance": {
+        "message": "Acceptance criterion #1 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+        "operations": [
+          "mark_acceptance_check"
+        ]
+      }
+    },
+    {
+      "id": "2036f94b6c6c982b",
+      "checkType": "acceptance-coverage",
+      "severity": "error",
+      "message": "Acceptance criterion not verified: AC-2",
+      "primaryEntityId": "AC-2",
+      "entityIds": [
+        "T-impl",
+        "AC-2"
+      ],
+      "context": {
+        "given": "token expires",
+        "when": "refresh request made",
+        "then": "new token issued",
+        "order": 2,
+        "progressTotal": 3,
+        "progressCompleted": 0,
+        "progressRemaining": 3
+      },
+      "guidance": {
+        "message": "Acceptance criterion #2 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+        "operations": [
+          "mark_acceptance_check"
+        ]
+      }
+    },
+    {
+      "id": "63af8f7eb38e0272",
+      "checkType": "acceptance-coverage",
+      "severity": "error",
+      "message": "Acceptance criterion not verified: AC-3",
+      "primaryEntityId": "AC-3",
+      "entityIds": [
+        "T-impl",
+        "AC-3"
+      ],
+      "context": {
+        "given": "user logs out",
+        "when": "session ends",
+        "then": "tokens revoked",
+        "order": 3,
+        "progressTotal": 3,
+        "progressCompleted": 0,
+        "progressRemaining": 3
+      },
+      "guidance": {
+        "message": "Acceptance criterion #3 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+        "operations": [
+          "mark_acceptance_check"
+        ]
+      }
+    },
+    {
+      "id": "3dfcec6605b942cf",
+      "checkType": "file-action-coverage",
+      "severity": "error",
+      "message": "Unexpected file change recorded: src/auth/helpers.ts",
+      "primaryEntityId": "fc-extra-helper",
+      "entityIds": [
+        "T-impl",
+        "src/auth/helpers.ts",
+        "fc-extra-helper"
+      ],
+      "context": {
+        "expectedPath": "src/auth/helpers.ts",
+        "expectedAction": "create",
+        "status": "extra",
+        "progressTotal": 4,
+        "progressCompleted": 3,
+        "progressRemaining": 1,
+        "isImplComplete": true,
+        "fileChangeId": "fc-extra-helper",
+        "actualAction": "created",
+        "hasJustification": false,
+        "justificationApproved": "pending"
+      },
+      "guidance": {
+        "message": "A file was touched without being declared in the spec.\n - Path: src/auth/helpers.ts\n - Recorded action: created\n\n The spec does not list this file in any filesToBe* group, but the agent\n registered a change for it. Untracked file changes erode planning fidelity\n and should be either declared or justified.\n\n Possible reasons:\n - The file is genuinely necessary for the work but was missed during planning\n - The file is incidental (e.g., generated artifact, lockfile update) and warrants justification\n - The recording was mistaken (the file should not appear at all)\n\n Recommended moves:\n 1. Decide whether the change is essential to the ticket or peripheral\n 2. If essential, reopen the planning session to add the file to the appropriate filesToBe* list\n 3. If peripheral but legitimate, attach add_file_change_justification explaining why\n 4. If the recording was wrong, the operations layer rejects deletes — contact lifecycle to clean up",
+        "operations": [
+          "add_file_change_justification"
+        ]
+      }
+    }
+  ],
+  "nextStep": {
+    "reason": "resolve",
+    "action": "add-files-changes",
+    "issues": [
+      {
+        "fileChange": {
+          "id": "fc-extra-helper",
+          "workSessionId": "ws-1",
+          "ticketId": "T-impl",
+          "projectId": "p-1",
+          "expectedPath": "src/auth/helpers.ts",
+          "expectedAction": "create",
+          "actualAction": "created",
+          "status": "extra",
+          "justificationApproved": "pending",
+          "recordedAt": "2026-01-01T01:20:00.000Z"
+        },
+        "issue": "extra-without-justification"
+      }
+    ],
+    "progress": {
+      "total": 4,
+      "completed": 3,
+      "remaining": 1,
+      "remainingIds": [
+        "src/auth/helpers.ts"
+      ]
+    },
+    "guidance": {
+      "message": "File change issues require resolution before adding new entries.\n - Open issues: 1\n\n - src/auth/helpers.ts (extra without justification): declare via planning OR attach add_file_change_justification\n\n Issues take priority over registering new file actions — assayforge prevents\n progress until each open issue is resolved. Address them in the order shown.\n\n Recommended moves:\n 1. Resolve the first issue per its specific guidance (operations vary by issue type)\n 2. Continue down the list; each resolution may surface the next pending action",
+      "operations": [
+        "add_file_change_justification"
+      ]
+    }
+  },
+  "summary": null,
+  "meta": {
+    "engineVersion": "0.1.0",
+    "configHash": "cfg-e5e5b8b6"
+  }
+}

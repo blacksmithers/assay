@@ -1,0 +1,125 @@
+{
+  "passed": false,
+  "mode": "action",
+  "checks": {
+    "acceptanceCoverage": {
+      "checkType": "acceptance-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "implementationCoverage": {
+      "checkType": "implementation-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "fileActionCoverage": {
+      "checkType": "file-action-coverage",
+      "passed": true,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "testResultPresence": {
+      "checkType": "test-result-presence",
+      "passed": false,
+      "progress": {
+        "total": 1,
+        "completed": 1,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": [
+        {
+          "id": "48852fff481814a4",
+          "checkType": "test-result-presence",
+          "severity": "error",
+          "message": "Tests failing: unit",
+          "primaryEntityId": "tr-unit-old-failing",
+          "entityIds": [
+            "T-1",
+            "tr-unit-old-failing"
+          ],
+          "context": {
+            "issue": "tests-failing",
+            "testType": "unit",
+            "failed": 2,
+            "passed": 8,
+            "total": 10,
+            "command": "npm test"
+          },
+          "guidance": {
+            "message": "Tests failing without justification.\n - unit: 2/10 failed\n\n Fix and re-run (auto-supersedes), OR justify via add_failure_justification.",
+            "operations": [
+              "record_test_result",
+              "add_failure_justification"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "findings": [
+    {
+      "id": "48852fff481814a4",
+      "checkType": "test-result-presence",
+      "severity": "error",
+      "message": "Tests failing: unit",
+      "primaryEntityId": "tr-unit-old-failing",
+      "entityIds": [
+        "T-1",
+        "tr-unit-old-failing"
+      ],
+      "context": {
+        "issue": "tests-failing",
+        "testType": "unit",
+        "failed": 2,
+        "passed": 8,
+        "total": 10,
+        "command": "npm test"
+      },
+      "guidance": {
+        "message": "Tests failing without justification.\n - unit: 2/10 failed\n\n Fix and re-run (auto-supersedes), OR justify via add_failure_justification.",
+        "operations": [
+          "record_test_result",
+          "add_failure_justification"
+        ]
+      }
+    }
+  ],
+  "nextStep": {
+    "reason": "complete",
+    "progress": {
+      "total": 4,
+      "completed": 4,
+      "remaining": 0,
+      "remainingIds": []
+    },
+    "guidance": {
+      "message": "Work session is ready for closure.\n\n Summary:\n - Total satisfied items: 4 of 4\n\n No pending items, no blocking issues. The work session has successfully\n covered every applicable action.\n\n Recommended move:\n 1. Invoke complete_work_session to formally close the session",
+      "operations": [
+        "complete_work_session"
+      ]
+    }
+  },
+  "summary": null,
+  "meta": {
+    "engineVersion": "0.1.0",
+    "configHash": "cfg-e5e5b8b6"
+  }
+}

@@ -1,0 +1,427 @@
+{
+  "passed": false,
+  "mode": "action",
+  "checks": {
+    "acceptanceCoverage": {
+      "checkType": "acceptance-coverage",
+      "passed": false,
+      "progress": {
+        "total": 3,
+        "completed": 0,
+        "remaining": 3,
+        "remainingIds": [
+          "AC-1",
+          "AC-2",
+          "AC-3"
+        ],
+        "nextInOrderId": "AC-1"
+      },
+      "findings": [
+        {
+          "id": "677f4d1103455a86",
+          "checkType": "acceptance-coverage",
+          "severity": "error",
+          "message": "Acceptance criterion not verified: AC-1",
+          "primaryEntityId": "AC-1",
+          "entityIds": [
+            "T-impl",
+            "AC-1"
+          ],
+          "context": {
+            "given": "OAuth provider replies",
+            "when": "callback hits /auth/callback",
+            "then": "session token persists",
+            "order": 1,
+            "progressTotal": 3,
+            "progressCompleted": 0,
+            "progressRemaining": 3
+          },
+          "guidance": {
+            "message": "Acceptance criterion #1 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+            "operations": [
+              "mark_acceptance_check"
+            ]
+          }
+        },
+        {
+          "id": "2036f94b6c6c982b",
+          "checkType": "acceptance-coverage",
+          "severity": "error",
+          "message": "Acceptance criterion not verified: AC-2",
+          "primaryEntityId": "AC-2",
+          "entityIds": [
+            "T-impl",
+            "AC-2"
+          ],
+          "context": {
+            "given": "token expires",
+            "when": "refresh request made",
+            "then": "new token issued",
+            "order": 2,
+            "progressTotal": 3,
+            "progressCompleted": 0,
+            "progressRemaining": 3
+          },
+          "guidance": {
+            "message": "Acceptance criterion #2 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+            "operations": [
+              "mark_acceptance_check"
+            ]
+          }
+        },
+        {
+          "id": "63af8f7eb38e0272",
+          "checkType": "acceptance-coverage",
+          "severity": "error",
+          "message": "Acceptance criterion not verified: AC-3",
+          "primaryEntityId": "AC-3",
+          "entityIds": [
+            "T-impl",
+            "AC-3"
+          ],
+          "context": {
+            "given": "user logs out",
+            "when": "session ends",
+            "then": "tokens revoked",
+            "order": 3,
+            "progressTotal": 3,
+            "progressCompleted": 0,
+            "progressRemaining": 3
+          },
+          "guidance": {
+            "message": "Acceptance criterion #3 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+            "operations": [
+              "mark_acceptance_check"
+            ]
+          }
+        }
+      ]
+    },
+    "implementationCoverage": {
+      "checkType": "implementation-coverage",
+      "passed": true,
+      "progress": {
+        "total": 4,
+        "completed": 4,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    },
+    "fileActionCoverage": {
+      "checkType": "file-action-coverage",
+      "passed": false,
+      "progress": {
+        "total": 3,
+        "completed": 0,
+        "remaining": 3,
+        "remainingIds": [
+          "src/auth/callback.ts",
+          "src/auth/refresh.ts",
+          "src/auth/logout.ts"
+        ]
+      },
+      "findings": [
+        {
+          "id": "82f3f61788e78bc3",
+          "checkType": "file-action-coverage",
+          "severity": "error",
+          "message": "Expected file change not recorded: src/auth/callback.ts",
+          "primaryEntityId": "src/auth/callback.ts",
+          "entityIds": [
+            "T-impl",
+            "src/auth/callback.ts"
+          ],
+          "context": {
+            "expectedPath": "src/auth/callback.ts",
+            "expectedAction": "create",
+            "status": "missing",
+            "progressTotal": 3,
+            "progressCompleted": 0,
+            "progressRemaining": 3,
+            "isImplComplete": true,
+            "hasJustification": false
+          },
+          "guidance": {
+            "message": "A planned file action is missing.\n - Path: src/auth/callback.ts\n - Expected action: create\n - Implementation steps: complete\n\n Implementation is fully recorded as done, so this gap is unlikely to resolve\n automatically. Either you have not registered the file change yet, or the\n file action was not executed.\n\n Possible reasons:\n - You executed the action but did not register it via record_file_change\n - The file was intentionally not touched (consider attaching a justification)\n - The spec is wrong about this file (consider reopening planning to remove it)\n\n Recommended moves:\n 1. Run `git status` and `git diff` to confirm the local state of src/auth/callback.ts\n 2. If the file matches the expected action, register it via record_file_change with the matching actualAction (and optional commitHash for lifecycle validation)\n 3. If the file was deliberately skipped, attach a reason via add_file_change_justification\n 4. If the spec is wrong, reopen the planning session and adjust the filesToBe* lists",
+            "operations": [
+              "record_file_change",
+              "add_file_change_justification"
+            ]
+          }
+        },
+        {
+          "id": "7afd64cc208aafa1",
+          "checkType": "file-action-coverage",
+          "severity": "error",
+          "message": "Expected file change not recorded: src/auth/logout.ts",
+          "primaryEntityId": "src/auth/logout.ts",
+          "entityIds": [
+            "T-impl",
+            "src/auth/logout.ts"
+          ],
+          "context": {
+            "expectedPath": "src/auth/logout.ts",
+            "expectedAction": "create",
+            "status": "missing",
+            "progressTotal": 3,
+            "progressCompleted": 0,
+            "progressRemaining": 3,
+            "isImplComplete": true,
+            "hasJustification": false
+          },
+          "guidance": {
+            "message": "Planned file not registered (impl complete).\n - create: src/auth/logout.ts\n\n Register via record_file_change or attach add_file_change_justification.",
+            "operations": [
+              "record_file_change",
+              "add_file_change_justification"
+            ]
+          }
+        },
+        {
+          "id": "ba1e9db541751ae4",
+          "checkType": "file-action-coverage",
+          "severity": "error",
+          "message": "Expected file change not recorded: src/auth/refresh.ts",
+          "primaryEntityId": "src/auth/refresh.ts",
+          "entityIds": [
+            "T-impl",
+            "src/auth/refresh.ts"
+          ],
+          "context": {
+            "expectedPath": "src/auth/refresh.ts",
+            "expectedAction": "create",
+            "status": "missing",
+            "progressTotal": 3,
+            "progressCompleted": 0,
+            "progressRemaining": 3,
+            "isImplComplete": true,
+            "hasJustification": false
+          },
+          "guidance": {
+            "message": "Planned file not registered (impl complete).\n - create: src/auth/refresh.ts\n\n Register via record_file_change or attach add_file_change_justification.",
+            "operations": [
+              "record_file_change",
+              "add_file_change_justification"
+            ]
+          }
+        }
+      ]
+    },
+    "testResultPresence": {
+      "checkType": "test-result-presence",
+      "passed": true,
+      "progress": {
+        "total": 0,
+        "completed": 0,
+        "remaining": 0,
+        "remainingIds": []
+      },
+      "findings": []
+    }
+  },
+  "findings": [
+    {
+      "id": "677f4d1103455a86",
+      "checkType": "acceptance-coverage",
+      "severity": "error",
+      "message": "Acceptance criterion not verified: AC-1",
+      "primaryEntityId": "AC-1",
+      "entityIds": [
+        "T-impl",
+        "AC-1"
+      ],
+      "context": {
+        "given": "OAuth provider replies",
+        "when": "callback hits /auth/callback",
+        "then": "session token persists",
+        "order": 1,
+        "progressTotal": 3,
+        "progressCompleted": 0,
+        "progressRemaining": 3
+      },
+      "guidance": {
+        "message": "Acceptance criterion #1 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+        "operations": [
+          "mark_acceptance_check"
+        ]
+      }
+    },
+    {
+      "id": "2036f94b6c6c982b",
+      "checkType": "acceptance-coverage",
+      "severity": "error",
+      "message": "Acceptance criterion not verified: AC-2",
+      "primaryEntityId": "AC-2",
+      "entityIds": [
+        "T-impl",
+        "AC-2"
+      ],
+      "context": {
+        "given": "token expires",
+        "when": "refresh request made",
+        "then": "new token issued",
+        "order": 2,
+        "progressTotal": 3,
+        "progressCompleted": 0,
+        "progressRemaining": 3
+      },
+      "guidance": {
+        "message": "Acceptance criterion #2 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+        "operations": [
+          "mark_acceptance_check"
+        ]
+      }
+    },
+    {
+      "id": "63af8f7eb38e0272",
+      "checkType": "acceptance-coverage",
+      "severity": "error",
+      "message": "Acceptance criterion not verified: AC-3",
+      "primaryEntityId": "AC-3",
+      "entityIds": [
+        "T-impl",
+        "AC-3"
+      ],
+      "context": {
+        "given": "user logs out",
+        "when": "session ends",
+        "then": "tokens revoked",
+        "order": 3,
+        "progressTotal": 3,
+        "progressCompleted": 0,
+        "progressRemaining": 3
+      },
+      "guidance": {
+        "message": "Acceptance criterion #3 not verified.\n - GIVEN/WHEN/THEN as declared\n\n Verify the implemented behavior, then run mark_acceptance_check.",
+        "operations": [
+          "mark_acceptance_check"
+        ]
+      }
+    },
+    {
+      "id": "82f3f61788e78bc3",
+      "checkType": "file-action-coverage",
+      "severity": "error",
+      "message": "Expected file change not recorded: src/auth/callback.ts",
+      "primaryEntityId": "src/auth/callback.ts",
+      "entityIds": [
+        "T-impl",
+        "src/auth/callback.ts"
+      ],
+      "context": {
+        "expectedPath": "src/auth/callback.ts",
+        "expectedAction": "create",
+        "status": "missing",
+        "progressTotal": 3,
+        "progressCompleted": 0,
+        "progressRemaining": 3,
+        "isImplComplete": true,
+        "hasJustification": false
+      },
+      "guidance": {
+        "message": "A planned file action is missing.\n - Path: src/auth/callback.ts\n - Expected action: create\n - Implementation steps: complete\n\n Implementation is fully recorded as done, so this gap is unlikely to resolve\n automatically. Either you have not registered the file change yet, or the\n file action was not executed.\n\n Possible reasons:\n - You executed the action but did not register it via record_file_change\n - The file was intentionally not touched (consider attaching a justification)\n - The spec is wrong about this file (consider reopening planning to remove it)\n\n Recommended moves:\n 1. Run `git status` and `git diff` to confirm the local state of src/auth/callback.ts\n 2. If the file matches the expected action, register it via record_file_change with the matching actualAction (and optional commitHash for lifecycle validation)\n 3. If the file was deliberately skipped, attach a reason via add_file_change_justification\n 4. If the spec is wrong, reopen the planning session and adjust the filesToBe* lists",
+        "operations": [
+          "record_file_change",
+          "add_file_change_justification"
+        ]
+      }
+    },
+    {
+      "id": "7afd64cc208aafa1",
+      "checkType": "file-action-coverage",
+      "severity": "error",
+      "message": "Expected file change not recorded: src/auth/logout.ts",
+      "primaryEntityId": "src/auth/logout.ts",
+      "entityIds": [
+        "T-impl",
+        "src/auth/logout.ts"
+      ],
+      "context": {
+        "expectedPath": "src/auth/logout.ts",
+        "expectedAction": "create",
+        "status": "missing",
+        "progressTotal": 3,
+        "progressCompleted": 0,
+        "progressRemaining": 3,
+        "isImplComplete": true,
+        "hasJustification": false
+      },
+      "guidance": {
+        "message": "Planned file not registered (impl complete).\n - create: src/auth/logout.ts\n\n Register via record_file_change or attach add_file_change_justification.",
+        "operations": [
+          "record_file_change",
+          "add_file_change_justification"
+        ]
+      }
+    },
+    {
+      "id": "ba1e9db541751ae4",
+      "checkType": "file-action-coverage",
+      "severity": "error",
+      "message": "Expected file change not recorded: src/auth/refresh.ts",
+      "primaryEntityId": "src/auth/refresh.ts",
+      "entityIds": [
+        "T-impl",
+        "src/auth/refresh.ts"
+      ],
+      "context": {
+        "expectedPath": "src/auth/refresh.ts",
+        "expectedAction": "create",
+        "status": "missing",
+        "progressTotal": 3,
+        "progressCompleted": 0,
+        "progressRemaining": 3,
+        "isImplComplete": true,
+        "hasJustification": false
+      },
+      "guidance": {
+        "message": "Planned file not registered (impl complete).\n - create: src/auth/refresh.ts\n\n Register via record_file_change or attach add_file_change_justification.",
+        "operations": [
+          "record_file_change",
+          "add_file_change_justification"
+        ]
+      }
+    }
+  ],
+  "nextStep": {
+    "reason": "next-action",
+    "action": "add-files-changes",
+    "targets": [
+      {
+        "expectedPath": "src/auth/callback.ts",
+        "expectedAction": "create"
+      },
+      {
+        "expectedPath": "src/auth/refresh.ts",
+        "expectedAction": "create"
+      },
+      {
+        "expectedPath": "src/auth/logout.ts",
+        "expectedAction": "create"
+      }
+    ],
+    "progress": {
+      "total": 3,
+      "completed": 0,
+      "remaining": 3,
+      "remainingIds": [
+        "src/auth/callback.ts",
+        "src/auth/refresh.ts",
+        "src/auth/logout.ts"
+      ]
+    },
+    "guidance": {
+      "message": "File actions pending registration (3 of 3):\n\n - create: src/auth/callback.ts\n - create: src/auth/refresh.ts\n - create: src/auth/logout.ts\n\n The spec lists these file paths and actions; you need to register what\n actually happened during implementation. Each entry needs an actualAction\n (created/modified/deleted/referenced/absent) and a status (matched if it went\n as planned, mismatched/missing/extra otherwise).\n\n Recommended moves:\n 1. Run `git status` and `git log` to verify what changed\n 2. For each entry above, run record_file_change with the actualAction, status, and optional commitHash\n 3. If any registration diverges from the planned action, attach add_file_change_justification explaining why",
+      "operations": [
+        "record_file_change",
+        "add_file_change_justification"
+      ]
+    }
+  },
+  "summary": null,
+  "meta": {
+    "engineVersion": "0.1.0",
+    "configHash": "cfg-e5e5b8b6"
+  }
+}
